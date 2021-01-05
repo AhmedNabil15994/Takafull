@@ -1,0 +1,337 @@
+/*Big Size Screens*/
+@media (min-width:991px) and (max-width: 1200px)
+{
+	.features .itemFeatures
+	{
+		min-height:250px;
+		padding:30px 15px
+	}
+	
+	
+	.slider .sliderDetails
+	{
+		padding-top:5%;
+	}
+	
+	.header .menuList li a
+	{
+		font-size:16px;
+		padding:0 10px
+	}
+
+	.bx-wrapper .bx-pager.bx-default-pager
+	{
+		bottom:50px;
+	}
+	
+
+
+}
+
+/* small Screens & tablets & Smart phone */
+@media (max-width: 991px) 
+{
+	
+	.header
+	{
+		padding:15px 0
+	}
+	
+	.header .logo
+	{
+		margin-top:0;
+	}
+	
+	.header .menuList
+	{
+		display:none;
+	}
+	
+	.header .iconMenuMob
+	{
+		display:block
+	}
+	
+	.slider .sliderDetails
+	{
+		padding-top:11%
+	}
+	
+	.slider .sliderDetails .titleSlider
+	{
+	    font-size: 20px;
+	    line-height: 37px;
+	    max-width: 520px;
+	    margin-bottom: 20px;
+	}
+	
+	.slider .sliderDetails a
+	{
+		height:35px;
+		line-height:35px;
+		font-size:15px;
+		width:130px
+	}
+	
+	.bx-wrapper .bx-pager.bx-default-pager
+	{
+		display:none;
+	}
+	
+	.contactUs .modal-body,
+	.ModalPrivacy .modal-body
+	{
+		padding:40px 30px;
+	}
+	
+	.contactUs .modal-dialog,
+	.ModalPrivacy .modal-dialog
+	{
+		width:auto
+	}
+	
+	.menuDown .linksList
+	{
+		width:100%;
+		min-width:auto
+	}
+	
+	.newCard .col-md-5,
+	.newCard .col-md-7
+	{
+		width:100%;
+	}
+	
+	.newCard .form .formCard
+	{
+		margin-top:0;
+		border-radius:0
+	}
+	
+	.newCard .form .formCard .titleForm
+	{
+		position: static;
+		padding:0;
+		width:auto;
+		height:auto;
+		background:none;
+		color:#000;
+		margin-bottom:20px;
+		text-align: center;
+		font-size:30px;
+		font-family: "Tajawal-Bold";
+		line-height:normal
+	}
+	
+	.newCard .imgDiv img
+	{
+		max-width:100%;
+	}
+	
+}
+
+/* Small Screens */
+@media (min-width: 768px) and (max-width: 991px) 
+{
+	
+}
+
+/* Mobile & Tablets */
+@media (max-width: 767px) 
+{
+	
+	.slider .sliderDetails
+	{
+		padding-top:11%
+	}
+	
+	.the-slider-control li span i
+	{
+		display:none;
+	}
+	
+	.bx-wrapper .bx-pager.bx-default-pager
+	{
+		bottom: 30px
+	}
+	
+	.slider .sliderDetails .titleSlider
+	{
+		font-size: 20px;
+    	line-height: 31px;
+	}
+	
+	.headerHeight
+	{
+		height:80px
+	}
+	
+	.header .logo
+	{
+		width:160px
+	}
+	
+	.header .iconMenu
+	{
+		margin-right:25px;
+		margin-top:20px
+	}
+	
+	.header .btnHeader
+	{
+		margin-top:4px;
+	}
+	
+	.features .tabsBtns
+	{
+		width:100%
+	}
+	
+	.features .tabsBtns li
+	{
+		min-width:auto;
+		width:50%;
+		font-size:17px;
+	}
+
+}
+
+/* Tablets */
+@media (min-width:480px) and (max-width: 767px)
+{
+
+}
+
+/* Mobile */
+@media (max-width: 480px) 
+{
+	.header .btnHeader
+	{
+		display:none;
+	}
+	
+	.slider .sliderDetails .titleSlider
+	{
+	    font-size: 14px;
+	    line-height: 22px;
+	    max-width:290px;
+	    margin-bottom: 15px;
+	}
+	.slider .sliderDetails
+	{
+		padding-top:5%
+	}
+	
+	.slider .sliderDetails a:last-of-type
+	{
+		margin-left:15px;
+	}
+	
+	.slider .sliderDetails a
+	{
+		width:120px;
+		font-size:14px;
+	}
+	
+	.bx-wrapper .bx-pager.bx-default-pager
+	{
+		bottom:20px;
+	}
+	
+	.newCard .form .titleForm,
+	.JoinNow .title
+	{
+		font-size:25px
+	}
+	
+	.JoinNow .desc,
+	.footer .descFooter,
+	.footer .price
+	{
+		font-size:20px;
+	}
+	
+	.footer .titleNomb
+	{
+		font-size:21px;
+	}
+	
+	.footer .numbFooter
+	{
+		font-size:22px
+	}
+	
+	.footer .descFooter
+	{
+		line-height:40px;
+	}
+	
+	.menuDown .linksList li a
+	{
+		font-size:9px;
+		padding:5px 0 10px
+	}
+	
+	.menuDown .linksList li a i
+	{
+		font-size:22px
+	}
+	
+	.menuDown .linksList li a:before
+	{
+		height:2px;
+	}
+	
+	.features .tabsBtns li
+	{
+		font-size:14px;
+	}
+	
+	.menuDown .linksList li a
+	{
+		font-size:7px;
+	}
+	
+	.btnsFixed a
+	{
+		width:55px;
+		height:55px;
+		line-height:55px;
+		font-size:20px
+	}
+	
+	.newCard .form .formCard
+	{
+		padding:20px
+	}
+	
+	.newCard .form .formCard .titleForm
+	{
+		font-size:25px
+	}
+	
+	.newCard .checkDiv .text
+	{
+		font-size:13px;
+	}
+	
+	.newCard .form .formCard button
+	{
+		height:40px;
+		line-height:40px;
+		font-size:20px;
+	}
+	
+	.features .tabsBtns li:first-of-type{
+		margin-left:0;
+	}
+
+}
+
+/* Mobile */
+@media (max-width: 320px) 
+{
+	
+}
+
+

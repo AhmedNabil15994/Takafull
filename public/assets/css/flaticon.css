@@ -1,0 +1,77 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 08/04/2019 00:38
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/Flaticon.eot");
+  src: url("../fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/Flaticon.woff2") format("woff2"),
+       url("../fonts/Flaticon.woff") format("woff"),
+       url("../fonts/Flaticon.ttf") format("truetype"),
+       url("../fonts/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("../fonts/Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+	font-style: normal;
+}
+
+
+.flaticon-report:before { content: "\f100"; }
+.flaticon-name:before { content: "\f101"; }
+.flaticon-quality:before { content: "\f102"; }
+.flaticon-shield:before { content: "\f103"; }
+.flaticon-mail:before { content: "\f104"; }
+.flaticon-telephone:before { content: "\f105"; }
+.flaticon-heart:before { content: "\f106"; }
+.flaticon-tag:before { content: "\f107"; }
+.flaticon-flask:before { content: "\f108"; }
+.flaticon-maternity:before { content: "\f109"; }
+.flaticon-eye-tracking:before { content: "\f10a"; }
+.flaticon-makeup:before { content: "\f10b"; }
+.flaticon-tooth-filling:before { content: "\f10c"; }
+.flaticon-group:before { content: "\f10d"; }
+.flaticon-money:before { content: "\f10e"; }
+.flaticon-name-1:before { content: "\f10f"; }
+.flaticon-id-card:before { content: "\f110"; }
+.flaticon-pie-graphic:before { content: "\f111"; }
+.flaticon-couple:before { content: "\f112"; }
+.flaticon-family:before { content: "\f113"; }
+.flaticon-layers:before { content: "\f114"; }
+.flaticon-contact:before { content: "\f115"; }
+.flaticon-link:before { content: "\f116"; }
+.flaticon-play-button:before { content: "\f117"; }
+.flaticon-hospital:before { content: "\f118"; }
+.flaticon-location:before { content: "\f119"; }
+.flaticon-discount:before { content: "\f11a"; }
+.flaticon-whatsapp:before { content: "\f11b"; }
+.flaticon-id-card-1:before { content: "\f11c"; }
+.flaticon-award:before { content: "\f11d"; }
+.flaticon-like:before { content: "\f11e"; }
+.flaticon-paper-plane:before { content: "\f11f"; }
+.flaticon-cardiogram:before { content: "\f120"; }
+.flaticon-braces:before { content: "\f121"; }
+.flaticon-surgery:before { content: "\f122"; }
+.flaticon-scientist:before { content: "\f123"; }
+.flaticon-makeup-1:before { content: "\f124"; }
+.flaticon-vision:before { content: "\f125"; }
+.flaticon-team:before { content: "\f126"; }
+.flaticon-money-bag:before { content: "\f127"; }
+.flaticon-id-card-2:before { content: "\f128"; }
+.flaticon-check-mark:before { content: "\f129"; }
+.flaticon-profit:before { content: "\f12a"; }
+.flaticon-social-care:before { content: "\f12b"; }
+.flaticon-phone-call:before { content: "\f12c"; }
+.flaticon-down-arrow:before { content: "\f12d"; }
