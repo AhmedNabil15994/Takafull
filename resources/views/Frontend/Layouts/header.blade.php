@@ -1,6 +1,6 @@
 <div class="header">
   <div class="container clearfix">
-    <a href="{{ URL::to('/') }}" class="logo"><img src="{{ URL::to('/assets/images/logo.png') }}" alt="" /></a>
+    <a href="{{ URL::to('/') }}" class="logo"><img src="{{ asset('/assets/images/logo.png') }}" alt="" /></a>
     <i class="iconMenuMob iconMenu"></i>
     <ul class="menuList clearfix">
       @foreach($data->topMenu as $key => $item)

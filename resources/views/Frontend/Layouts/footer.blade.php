@@ -12,7 +12,7 @@
 					<a href="tel:{{ $data->tele2 }}">{{ $data->tele2 }}</a> 
 				</p>
 			</div>
-			<a href="#" class="logoServers wow fadeInUp"><img src="{{ URL::to('/assets/images/logoServers.png') }}" alt="" /></a>
+			<a href="#" class="logoServers wow fadeInUp"><img src="{{ asset('/assets/images/logoServers.png') }}" alt="" /></a>
 		</center>
 	</div>
 </footer>

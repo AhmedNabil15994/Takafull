@@ -87,7 +87,7 @@
 					</div>
 					<div class="col-md-7">
 						<div class="imgDiv">
-							<img src="{{ URL::to('/assets/images/imgForm.png') }}" alt="" />
+							<img src="{{ asset('/assets/images/imgForm.png') }}" alt="" />
 							<div class="privcyDiv">
 									<h3 class="PrivacyTitle">سياسة الخصوصية</h3>
 									<div class="privcyDesc">بطلبك البطاقة فانت توافق علي سياسة الخصوصية الخاصة بنا <a href="#"  data-toggle="modal" data-target="#ModalPrivacy">الخصوصية</a></div>
@@ -170,5 +170,5 @@
 @endsection
 
 @section('scripts')
-<script src="{{ URL::to('/assets/components/home.js') }}"></script>
+<script src="{{ asset('/assets/components/home.js') }}"></script>
 @endsection

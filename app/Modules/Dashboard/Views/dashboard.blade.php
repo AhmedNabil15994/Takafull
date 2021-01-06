@@ -278,5 +278,5 @@
 
 {{-- Scripts Section --}}
 @section('scripts')
-<script src="{{ URL::to('/assets/components/dashboard.js') }}"></script>
+<script src="{{ asset('/assets/components/dashboard.js') }}"></script>
 @endsection

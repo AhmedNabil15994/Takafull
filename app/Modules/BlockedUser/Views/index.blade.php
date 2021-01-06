@@ -217,6 +217,6 @@
 
 {{-- Scripts Section --}}
 @section('scripts')
-<script src="{{ URL::to('/assets/components/blockedUsers-datatables.js')}}"></script>           
-<script src="{{ URL::to('/assets/components/blockedUsers.js')}}"></script>           
+<script src="{{ asset('/assets/components/blockedUsers-datatables.js')}}"></script>           
+<script src="{{ asset('/assets/components/blockedUsers.js')}}"></script>           
 @endsection

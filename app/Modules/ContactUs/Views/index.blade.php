@@ -233,6 +233,6 @@
 
 {{-- Scripts Section --}}
 @section('scripts')
-<script src="{{ URL::to('/assets/components/contactUs-datatables.js')}}"></script>           
-<script src="{{ URL::to('/assets/components/contactUs.js')}}"></script>           
+<script src="{{ asset('/assets/components/contactUs-datatables.js')}}"></script>           
+<script src="{{ asset('/assets/components/contactUs.js')}}"></script>           
 @endsection

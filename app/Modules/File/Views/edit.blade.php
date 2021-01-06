@@ -4,8 +4,8 @@
 
 {{-- Content --}}
 @section('styles')
-<link rel="stylesheet" type="text/css" href="{{ URL::to('/assets/css/default-skin.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ URL::to('/assets/css/photoswipe.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('/assets/css/default-skin.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('/assets/css/photoswipe.css') }}">
 <style type="text/css" media="screen">
     body{
         overflow-x: hidden;
@@ -158,10 +158,10 @@
 
 {{-- Scripts Section --}}
 @section('scripts')
-<script src="{{ URL::to('/assets/components/menu-add.js') }}"></script>  
-<script src="{{ URL::to('/assets/components/file-edit.js') }}"></script>
-<script src="{{ URL::to('/assets/js/photoswipe.min.js') }}"></script>
-<script src="{{ URL::to('/assets/js/photoswipe-ui-default.min.js') }}"></script>
-<script src="{{ URL::to('/assets/components/myPhotoSwipe.js') }}"></script>     
+<script src="{{ asset('/assets/components/menu-add.js') }}"></script>  
+<script src="{{ asset('/assets/components/file-edit.js') }}"></script>
+<script src="{{ asset('/assets/js/photoswipe.min.js') }}"></script>
+<script src="{{ asset('/assets/js/photoswipe-ui-default.min.js') }}"></script>
+<script src="{{ asset('/assets/components/myPhotoSwipe.js') }}"></script>     
 @endsection
 

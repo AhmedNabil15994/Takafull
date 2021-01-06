@@ -8,7 +8,7 @@ class ImagesHelper {
    static function GetImagePath($strAction, $id, $filename,$withDefault=true) {
 
         if($withDefault){
-            $default = URL::to('/assets/production/images/not-available.jpg');
+            $default = asset('/assets/production/images/not-available.jpg');
         }else{
             $default = '';
         }

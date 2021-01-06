@@ -1,7 +1,7 @@
 <thead>
 <tr>
     <td align="left" colspan="2">
-        <a href="#"><img src="{{ URL::to('/assets/images/logoServers.png') }}" width="110" alt="Takaful Logo" style="display:block; float:left; margin:10px 8px"></a>
+        <a href="#"><img src="{{ asset('/assets/images/logoServers.png') }}" width="110" alt="Takaful Logo" style="display:block; float:left; margin:10px 8px"></a>
         <h3 style="font:20px/35px arial; color:#456FB1; float:right">@yield('title')</h3>
     </td>
 </tr>

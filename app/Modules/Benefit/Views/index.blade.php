@@ -216,6 +216,6 @@
 
 {{-- Scripts Section --}}
 @section('scripts')
-<script src="{{ URL::to('/assets/components/benefits-datatables.js')}}"></script>           
-<script src="{{ URL::to('/assets/components/benefits.js')}}"></script>           
+<script src="{{ asset('/assets/components/benefits-datatables.js')}}"></script>           
+<script src="{{ asset('/assets/components/benefits.js')}}"></script>           
 @endsection

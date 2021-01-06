@@ -146,7 +146,7 @@
 
 {{-- Scripts Section --}}
 @section('scripts')
-<script src="{{ URL::to('/assets/components/menu-add.js') }}"></script>  
-<script src="{{ URL::to('/assets/js/pages/crud/forms/editors/summernote.js') }}"></script>
-<script src="{{ URL::to('/assets/components/page-add.js') }}"></script>
+<script src="{{ asset('/assets/components/menu-add.js') }}"></script>  
+<script src="{{ asset('/assets/js/pages/crud/forms/editors/summernote.js') }}"></script>
+<script src="{{ asset('/assets/components/page-add.js') }}"></script>
 @endsection

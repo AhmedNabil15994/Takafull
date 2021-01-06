@@ -4,22 +4,22 @@
 </script>
 <!--end::Global Config-->
 <!--begin::Global Theme Bundle(used by all pages)-->
-<script src="{{ URL::to('/assets/plugins/global/plugins.bundle.js') }}"></script>
-<script src="{{ URL::to('/assets/plugins/custom/prismjs/prismjs.bundle.js') }}"></script>
-<script src="{{ URL::to('/assets/js/scripts.bundle.js') }}"></script>
+<script src="{{ asset('/assets/plugins/global/plugins.bundle.js') }}"></script>
+<script src="{{ asset('/assets/plugins/custom/prismjs/prismjs.bundle.js') }}"></script>
+<script src="{{ asset('/assets/js/scripts.bundle.js') }}"></script>
 <!--end::Global Theme Bundle-->
 <!--begin::Page Vendors(used by this page)-->
-<script src="{{ URL::to('/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js') }}"></script>
-<script src="{{ URL::to('/assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
-{{-- <script src="{{ URL::to('/assets/js/pages/crud/datatables/advanced/footer-callback.js') }}"></script> --}}
-<script src="{{ URL::to('/assets/js/pages/crud/datatables/advanced/datatables-buttons.min.js') }}"></script>
-<script src="{{ URL::to('/assets/js/pages/crud/datatables/advanced/colvis.min.js') }}"></script>
-{{-- <script src="{{ URL::to('/assets/js/pages/crud/datatables/advanced/multiple-controls.js') }}"></script> --}}
-<script src="{{ URL::to('/assets/js/pages/crud/forms/widgets/select2.js') }}"></script>
-<script src="{{ URL::to('/assets/js/pages/features/miscellaneous/sweetalert2.js') }}"></script>
-<script src="{{ URL::to('/assets/components/notifications.js') }}"></script>
+<script src="{{ asset('/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js') }}"></script>
+<script src="{{ asset('/assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
+{{-- <script src="{{ asset('/assets/js/pages/crud/datatables/advanced/footer-callback.js') }}"></script> --}}
+<script src="{{ asset('/assets/js/pages/crud/datatables/advanced/datatables-buttons.min.js') }}"></script>
+<script src="{{ asset('/assets/js/pages/crud/datatables/advanced/colvis.min.js') }}"></script>
+{{-- <script src="{{ asset('/assets/js/pages/crud/datatables/advanced/multiple-controls.js') }}"></script> --}}
+<script src="{{ asset('/assets/js/pages/crud/forms/widgets/select2.js') }}"></script>
+<script src="{{ asset('/assets/js/pages/features/miscellaneous/sweetalert2.js') }}"></script>
+<script src="{{ asset('/assets/components/notifications.js') }}"></script>
 <!--end::Page Vendors-->
 <!--begin::Page Scripts(used by this page)-->
 <!--end::Page Scripts-->
-<script src="{{ URL::to('/assets/js/touches.js') }}"></script>
+<script src="{{ asset('/assets/js/touches.js') }}"></script>
 @yield('scripts');

@@ -209,6 +209,6 @@
 
 {{-- Scripts Section --}}
 @section('scripts')
-<script src="{{ URL::to('/assets/components/city-datatables.js')}}"></script>           
-<script src="{{ URL::to('/assets/components/city.js')}}"></script>           
+<script src="{{ asset('/assets/components/city-datatables.js')}}"></script>           
+<script src="{{ asset('/assets/components/city.js')}}"></script>           
 @endsection

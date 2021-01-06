@@ -3,8 +3,8 @@
 @section('title','الاسلايدر')
 
 @section('styles')
-<link rel="stylesheet" type="text/css" href="{{ URL::to('/assets/css/default-skin.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ URL::to('/assets/css/photoswipe.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('/assets/css/default-skin.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('/assets/css/photoswipe.css') }}">
 @endsection
 
 {{-- Content --}}
@@ -213,9 +213,9 @@
 
 {{-- Scripts Section --}}
 @section('scripts')
-<script src="{{ URL::to('/assets/components/sliders-datatables.js')}}"></script>           
-<script src="{{ URL::to('/assets/components/sliders.js')}}"></script>    
-<script src="{{ URL::to('/assets/js/photoswipe.min.js') }}"></script>
-<script src="{{ URL::to('/assets/js/photoswipe-ui-default.min.js') }}"></script>
-<script src="{{ URL::to('/assets/components/myPhotoSwipe.js') }}"></script>       
+<script src="{{ asset('/assets/components/sliders-datatables.js')}}"></script>           
+<script src="{{ asset('/assets/components/sliders.js')}}"></script>    
+<script src="{{ asset('/assets/js/photoswipe.min.js') }}"></script>
+<script src="{{ asset('/assets/js/photoswipe-ui-default.min.js') }}"></script>
+<script src="{{ asset('/assets/components/myPhotoSwipe.js') }}"></script>       
 @endsection

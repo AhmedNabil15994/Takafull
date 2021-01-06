@@ -216,6 +216,6 @@
 
 {{-- Scripts Section --}}
 @section('scripts')
-<script src="{{ URL::to('/assets/components/bottomMenu-datatables.js')}}"></script>           
-<script src="{{ URL::to('/assets/components/bottomMenu.js')}}"></script>           
+<script src="{{ asset('/assets/components/bottomMenu-datatables.js')}}"></script>           
+<script src="{{ asset('/assets/components/bottomMenu.js')}}"></script>           
 @endsection

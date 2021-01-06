@@ -225,6 +225,6 @@
 
 {{-- Scripts Section --}}
 @section('scripts')
-<script src="{{ URL::to('/assets/components/logs-datatables.js')}}"></script>           
-<script src="{{ URL::to('/assets/components/logs.js')}}"></script>           
+<script src="{{ asset('/assets/components/logs-datatables.js')}}"></script>           
+<script src="{{ asset('/assets/components/logs.js')}}"></script>           
 @endsection

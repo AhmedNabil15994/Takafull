@@ -209,6 +209,6 @@
 
 {{-- Scripts Section --}}
 @section('scripts')
-<script src="{{ URL::to('/assets/components/group-datatables.js')}}"></script>           
-<script src="{{ URL::to('/assets/components/group.js')}}"></script>           
+<script src="{{ asset('/assets/components/group-datatables.js')}}"></script>           
+<script src="{{ asset('/assets/components/group.js')}}"></script>           
 @endsection

@@ -294,6 +294,6 @@
 
 {{-- Scripts Section --}}
 @section('scripts')
-<script src="{{ URL::to('/assets/components/orders-datatables.js')}}"></script>           
-<script src="{{ URL::to('/assets/components/orders.js')}}"></script>           
+<script src="{{ asset('/assets/components/orders-datatables.js')}}"></script>           
+<script src="{{ asset('/assets/components/orders.js')}}"></script>           
 @endsection

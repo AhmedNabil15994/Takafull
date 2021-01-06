@@ -97,7 +97,7 @@
 
 {{-- Scripts Section --}}
 @section('scripts')
-<script src="{{ URL::to('/assets/components/menu-add.js') }}"></script>  
-<script src="{{ URL::to('/assets/components/varTags.js') }}"></script>
+<script src="{{ asset('/assets/components/menu-add.js') }}"></script>  
+<script src="{{ asset('/assets/components/varTags.js') }}"></script>
 @endsection
 

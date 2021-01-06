@@ -172,6 +172,6 @@
 
 {{-- Scripts Section --}}
 @section('scripts')
-<script src="{{ URL::to('/assets/components/menu-add.js') }}"></script>  
-<script src="{{ URL::to('/assets/components/user-add.js') }}"></script>
+<script src="{{ asset('/assets/components/menu-add.js') }}"></script>  
+<script src="{{ asset('/assets/components/user-add.js') }}"></script>
 @endsection

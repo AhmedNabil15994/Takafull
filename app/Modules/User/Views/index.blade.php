@@ -228,6 +228,6 @@
 
 {{-- Scripts Section --}}
 @section('scripts')
-<script src="{{ URL::to('/assets/components/user-datatables.js')}}"></script>           
-<script src="{{ URL::to('/assets/components/user.js')}}"></script>           
+<script src="{{ asset('/assets/components/user-datatables.js')}}"></script>           
+<script src="{{ asset('/assets/components/user.js')}}"></script>           
 @endsection

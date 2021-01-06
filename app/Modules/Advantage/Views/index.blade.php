@@ -216,6 +216,6 @@
 
 {{-- Scripts Section --}}
 @section('scripts')
-<script src="{{ URL::to('/assets/components/advantages-datatables.js')}}"></script>           
-<script src="{{ URL::to('/assets/components/advantages.js')}}"></script>           
+<script src="{{ asset('/assets/components/advantages-datatables.js')}}"></script>           
+<script src="{{ asset('/assets/components/advantages.js')}}"></script>           
 @endsection

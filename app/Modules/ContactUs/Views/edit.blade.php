@@ -136,6 +136,6 @@
 
 {{-- Scripts Section --}}
 @section('scripts')
-<script src="{{ URL::to('/assets/components/menu-add.js') }}"></script>  
+<script src="{{ asset('/assets/components/menu-add.js') }}"></script>  
 @endsection
 

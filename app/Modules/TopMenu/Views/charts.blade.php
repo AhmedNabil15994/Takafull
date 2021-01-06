@@ -164,5 +164,5 @@
 
 {{-- Scripts Section --}}
 @section('scripts')
-<script src="{{ URL::to('/assets/components/charts.js') }}"></script>
+<script src="{{ asset('/assets/components/charts.js') }}"></script>
 @endsection

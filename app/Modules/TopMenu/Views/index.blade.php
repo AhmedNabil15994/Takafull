@@ -209,6 +209,6 @@
 
 {{-- Scripts Section --}}
 @section('scripts')
-<script src="{{ URL::to('/assets/components/menu-datatables.js')}}"></script>           
-<script src="{{ URL::to('/assets/components/topMenu.js')}}"></script>           
+<script src="{{ asset('/assets/components/menu-datatables.js')}}"></script>           
+<script src="{{ asset('/assets/components/topMenu.js')}}"></script>           
 @endsection

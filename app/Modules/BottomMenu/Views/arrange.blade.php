@@ -107,7 +107,7 @@
 
 {{-- Scripts Section --}}
 @section('scripts')
-<script src="{{ URL::to('/assets/js/jquery-ui.min.js')}}"></script>
-<script src="{{ URL::to('/assets/js/jquery.mjs.nestedSortable.js')}}"></script>
+<script src="{{ asset('/assets/js/jquery-ui.min.js')}}"></script>
+<script src="{{ asset('/assets/js/jquery.mjs.nestedSortable.js')}}"></script>
 <script src="{{ asset('assets/components/sorting.js') }}"></script>
 @endsection

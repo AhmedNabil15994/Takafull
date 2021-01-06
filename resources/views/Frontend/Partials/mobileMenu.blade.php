@@ -2,7 +2,7 @@
 	<div class="BgClose"></div>
 	<div class="menuContent">
 		<div class="headMenu">
-			<a href="#" data-scroll-nav="1" class="logoMenu"><img src="{{ URL::to('/assets/images/logo.png') }}" alt="" /></a>
+			<a href="#" data-scroll-nav="1" class="logoMenu"><img src="{{ asset('/assets/images/logo.png') }}" alt="" /></a>
 			<i class="fa fa-close closeX"></i>
 		</div>
 		<ul class="menuRes">
