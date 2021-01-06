@@ -25,7 +25,6 @@ class RoutesGate {
             'logout',
             'doLogin',
         ];
- 
         if(count(array_intersect($availableRules, $rules)) > 0) {
             return $next($request);
         }

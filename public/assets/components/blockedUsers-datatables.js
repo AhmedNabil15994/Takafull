@@ -91,7 +91,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					title: 'اسم المستخدم',
 					className: 'edits',
 					render: function(data, type, full, meta) {
-						return '<a href="#" class="editable" data-col="username" data-id="'+full.id+'">'+data+'</a>';
+						return '<a class="editable" data-col="username" data-id="'+full.id+'">'+data+'</a>';
 					},
 				},
 				{
@@ -99,7 +99,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					title: 'IP',
 					className: 'edits',
 					render: function(data, type, full, meta) {
-						return '<a href="#" class="editable" data-col="ip_address" data-id="'+full.id+'">'+data+'</a>';
+						return '<a class="editable" data-col="ip_address" data-id="'+full.id+'">'+data+'</a>';
 					},
 				},
 				{
@@ -107,7 +107,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					title: 'التاريخ',
 					className: 'edits dates',
 					render: function(data, type, full, meta) {
-						return '<a href="#" class="editable" data-col="created_at" data-id="'+full.id+'">'+data+'</a>';
+						return '<a class="editable" data-col="created_at" data-id="'+full.id+'">'+data+'</a>';
 					},
 				},
 				{

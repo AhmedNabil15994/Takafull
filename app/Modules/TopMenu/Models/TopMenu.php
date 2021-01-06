@@ -57,7 +57,7 @@ class TopMenu extends Model{
         $data->title = $source->title;
         $data->page_id = $source->page_id;
         $data->page_title = $source->page_id != 0 ? $source->page->title : 'صفحة خارجية';
-        $data->link = $source->link;
+        $data->link = $source->link != null ? $source->link : '';
         $data->sort = $source->sort;
         $data->status = $source->status;
         $data->statusText = $source->status == 0 ? 'مسودة' : 'مفعلة';

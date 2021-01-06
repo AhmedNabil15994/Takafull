@@ -93,7 +93,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					render: function(data, type, full, meta) {
 						var myElem= '<span class="label label-danger label-pill label-inline">لا يوجد</span>';
 						if(data != ''){
-							myElem = '<a href="#" class="editable" data-col="filename" data-id="'+full.id+'">'+data+'</a>';
+							myElem = '<a class="editable" data-col="filename" data-id="'+full.id+'">'+data+'</a>';
 						}
 						return myElem;
 					},
@@ -113,7 +113,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					title: 'تاريخ التحميل',
 					className: 'edits dates',
 					render: function(data, type, full, meta) {
-						return '<a href="#" class="editable" data-col="created_at" data-id="'+full.id+'">'+data+'</a>';
+						return '<a class="editable" data-col="created_at" data-id="'+full.id+'">'+data+'</a>';
 					},
 				},
 				{

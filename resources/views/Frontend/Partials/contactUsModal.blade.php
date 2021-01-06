@@ -11,19 +11,19 @@
                 <form class="Contact">
                 	<div class="row">
                 		<div class="col-md-6">
-                			<input type="text" placeholder="أضف الاسم :" />
+                			<input type="text" name="name" placeholder="أضف الاسم :" />
                 		</div>
                 		<div class="col-md-6">
-                			<input type="email" placeholder="البريد الإلكتروني :" />
+                			<input type="email" name="email" placeholder="البريد الإلكتروني :" />
                 		</div>
                 		<div class="col-md-6">
-                			<input type="number" placeholder="رقم الجوال :" />
+                			<input type="number" name="phone" placeholder="رقم الجوال :" />
                 		</div>
                 		<div class="col-md-6">
-                			<input type="number" placeholder="عنوان الرسالة :" />
+                			<input type="text" name="address" placeholder="عنوان الرسالة :" />
                 		</div>
                 		<div class="col-md-12">
-                			<textarea placeholder="تفاصيل الرسالة :"></textarea>
+                			<textarea name="message" placeholder="تفاصيل الرسالة :"></textarea>
                 		</div>
                 	</div>
                      

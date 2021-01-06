@@ -114,7 +114,7 @@
         <div class="row">
             <div class="col-lg-2"></div>
             <div class="col-lg-6">
-                <input name="Submit" type="submit" class="btn btn-success AddBTN " value="اضافة" id="SubmitBTN">
+                <input name="Submit" type="submit" class="btn btn-success AddBTN " value="حفظ" id="SubmitBTN">
                 <input name="Submit" type="submit" class="btn btn-primary AddBTN " value="حفظ كمسودة" id="SaveBTN">
                 <input type="reset" class="btn btn-danger Reset" value="مسح الحقول">
                 <input name="Add" type="hidden" value="TRUE" id="SaveBTN">

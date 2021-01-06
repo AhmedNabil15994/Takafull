@@ -19,6 +19,23 @@ class WebActions extends Model{
             ->first();
     }
 
+    static function getByDate($date=null,$start=null,$end=null,$type=null,$module_name=null){
+        $source = self::where(function($whereQuery) use ($date,$start,$end,$type,$module_name){
+            if($date == null){
+                $whereQuery->where('created_at','>=',now()->format('Y-m-d').' 00:00:00')->where('created_at','<=',now()->format('Y-m-d').' 23:59:59');
+            }else{
+                $whereQuery->where('created_at','>=',$start)->where('created_at','<=',$end);
+            }
+            if($type != null){
+                $whereQuery->where('type',$type);
+            }
+            if($module_name != null){
+                $whereQuery->where('module_name',$module_name);
+            }
+        })->orderBy('id','DESC');
+        return self::generateObj($source);
+    }
+
     static function dataList() {
         $input = \Request::all();
 
@@ -29,6 +46,7 @@ class WebActions extends Model{
 
     static function generateObj($source){
         $sourceArr = $source->get();
+        $count = $source->count();
 
         $list = [];
         foreach($sourceArr as $key => $value) {
@@ -38,45 +56,58 @@ class WebActions extends Model{
 
         // $data['pagination'] = \Helper::GeneratePagination($sourceArr);
         $data['data'] = $list;
+        $data['count'] = $count;
 
         return $data;
     }
 
     static function getData($source) {
+        $types = self::getType($source->type);
         $data = new  \stdClass();
         $data->id = $source->id;
         $data->type = $source->type;
-        $data->typeText = self::getType($source->type);
-        $data->username = $source->User->username;
+        $data->typeText = $types[0];
+        $data->label = $types[1];
+        $data->username = $source->created_by != 0 || $source->created_by != null ? $source->User->username: '';
         $data->module_name = $source->module_name;
         $data->created_at = \Helper::formatDateForDisplay($source->created_at,true);
+        $data->created_at2 = \Carbon\Carbon::createFromTimeStamp(strtotime($source->created_at))->diffForHumans();
         return $data;
     }
 
     static function getType($type){
         $text = '';
+        $label = '';
         if($type == 1){
             $text = 'اضافة';
+            $label = 'brand';
         }elseif($type == 2){
             $text = 'تعديل';
+            $label = 'success';
         }elseif($type == 3){
             $text = 'حذف';
+            $label = 'danger';
         }elseif($type == 4){
             $text = 'تعديل سريع';
+            $label = 'primary';
         }
-        return $text;
+        return [$text,$label];
     }
 
     static function getCountByType($type){
         return self::where('type',$type)->count();
     }
 
-    static function newType($type,$name){
+    static function newType($type,$name,$user=null){
         $myObj = new self;
         $myObj->type = $type;
         $myObj->module_name = $name;
         $myObj->created_at = DATE_TIME;
-        $myObj->created_by = USER_ID;
+        if($user != null){
+            $myObj->created_by = 0;
+        }else{
+            $myObj->created_by = USER_ID;
+        }
         $myObj->save();
     }
 

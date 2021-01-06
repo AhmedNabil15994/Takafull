@@ -24,16 +24,19 @@ class Slider extends Model{
         return \ImagesHelper::GetImagePath('sliders', $id, $photo,false);
     }
 
-    static function dataList() {
+    static function dataList($status=null) {
         $input = \Request::all();
 
-        $source = self::NotDeleted()->where(function ($query) use ($input) {
+        $source = self::NotDeleted()->where(function ($query) use ($input,$status) {
                     if (isset($input['title']) && !empty($input['title'])) {
                         $query->where('title', 'LIKE', '%' . $input['title'] . '%');
                     } 
                     if (isset($input['id']) && !empty($input['id'])) {
                         $query->where('id',  $input['id']);
                     } 
+                    if($status != null){
+                        $query->where('status',$status);
+                    }
                 })->orderBy('sort','ASC');
 
         return self::generateObj($source);

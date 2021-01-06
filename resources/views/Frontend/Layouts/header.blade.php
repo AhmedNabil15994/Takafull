@@ -3,12 +3,20 @@
     <a href="{{ URL::to('/') }}" class="logo"><img src="{{ URL::to('/assets/images/logo.png') }}" alt="" /></a>
     <i class="iconMenuMob iconMenu"></i>
     <ul class="menuList clearfix">
-      <li><a href="#" data-scroll-nav="1">طلب بطاقة جديدة</a></li>
-      <li><a href="#" data-scroll-nav="2">فائدة البطاقة</a></li>
-      <li><a href="#" data-scroll-nav="2">مميزات البطاقة</a></li>
-      <li><a href="https://takafulalarabia.com/regions/">الشبكة الطبية</a></li>
-      <li><a href="#" data-toggle="modal" data-target="#contactUs">التواصل معنا</a></li>
-      <li><a class="" href="#" data-toggle="modal" data-target="#ModalPrivacy">سياسة الخصوصية</a></li>
+      @foreach($data->topMenu as $key => $item)
+      @if($key == 0)
+        <li><a href="#" data-scroll-nav="1">{{ $item->title }}</a></li>
+      @elseif($key == 1 || $key == 2)
+        <li><a href="#" data-scroll-nav="2">{{ $item->title }}</a></li>
+      @endif
+      @if($item->page_id == 0)
+      <li><a href="{{ $item->link }}">{{ $item->title }}</a></li>
+      @else
+        @if($item->link != '')
+        <li><a href="#" data-toggle="modal" data-target="{{ $item->link }}">{{ $item->title }}</a></li>
+        @endif
+      @endif
+      @endforeach
     </ul>
   </div>  
 </div>

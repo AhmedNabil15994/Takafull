@@ -15,6 +15,17 @@ class ContactUs extends Model{
             ->find($id);
     }
 
+    static function getByDate($date=null,$start=null,$end=null){
+        $source = self::where(function($whereQuery) use ($date,$start,$end){
+            if($date == null){
+                $whereQuery->where('created_at','>=',now()->format('Y-m-d').' 00:00:00')->where('created_at','<=',now()->format('Y-m-d').' 23:59:59');
+            }else{
+                $whereQuery->where('created_at','>=',$start)->where('created_at','<=',$end);
+            }
+        })->orderBy('id','DESC');
+        return self::getObj($source);
+    }
+
     static function dataList() {        
         $input = \Request::all();
         $source = self::NotDeleted()->where(function ($query) use ($input) {
@@ -51,6 +62,7 @@ class ContactUs extends Model{
 
     static function getObj($source) {
         $sourceArr = $source->get();
+        $count = $source->count();
 
         $list = [];
         foreach ($sourceArr as $key => $value) {
@@ -59,6 +71,7 @@ class ContactUs extends Model{
         }
 
         $data['data'] = $list;
+        $data['count'] = $count;
         return $data;
     }
 

@@ -52,7 +52,7 @@
                     </a>
                 </li>
                 @endif
-
+                @if(\Helper::checkRules('list-pages,list-sliders,list-advantages,list-benefits,list-cities'))
                 <li class="menu-item menu-item-submenu {{ Active(URL::to('/backend/ourAdvantages*'),'menu-item-open active') }} {{ Active(URL::to('/backend/benefits*'),'menu-item-open active') }} {{ Active(URL::to('/backend/cities*'),'menu-item-open active') }} {{ Active(URL::to('/backend/pages*'),'menu-item-open active') }} {{ Active(URL::to('/backend/slider*'),'menu-item-open active') }}" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="#" class="menu-link menu-toggle">
                         <i class="menu-icon flaticon-home-2"></i>
@@ -110,7 +110,8 @@
                         </ul>
                     </div>
                 </li>
-
+                @endif
+                @if(\Helper::checkRules('list-orders,list-trashes'))
                 <li class="menu-item menu-item-submenu {{ Active(URL::to('/backend/orders*'),'menu-item-open active') }} {{ Active(URL::to('/backend/trashes*'),'menu-item-open active') }}" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="#" class="menu-link menu-toggle">
                         <i class="menu-icon flaticon-home-2"></i>
@@ -150,6 +151,8 @@
                         </ul>
                     </div>
                 </li>
+                @endif
+                @if(\Helper::checkRules('list-newOrders,list-sentOrders,list-delayedOrders,list-receivedOrders,list-unRepliedOrders,list-cancelledOrders'))
                 <li class="menu-item menu-item-submenu {{ Active(URL::to('/backend/newOrders*'),'menu-item-open active') }} {{ Active(URL::to('/backend/sentOrders*'),'menu-item-open active') }} {{ Active(URL::to('/backend/delayedOrders*'),'menu-item-open active') }} {{ Active(URL::to('/backend/receivedOrders*'),'menu-item-open active') }} {{ Active(URL::to('/backend/unRepliedOrders*'),'menu-item-open active') }} {{ Active(URL::to('/backend/cancelledOrders*'),'menu-item-open active') }} " aria-haspopup="true" data-menu-toggle="hover">
                     <a href="#" class="menu-link menu-toggle">
                         <i class="menu-icon flaticon-home-2"></i>
@@ -215,6 +218,7 @@
                         </ul>
                     </div>
                 </li>
+                @endif
                 @if(\Helper::checkRules('list-contactUs'))
                 <li class="menu-item menu-item-submenu {{ Active(URL::to('/backend/contactUs*'),'menu-item-open active') }}" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="#" class="menu-link menu-toggle">
@@ -240,7 +244,7 @@
                     </div>
                 </li>
                 @endif
-
+                @if(\Helper::checkRules('list-groups,list-users,list-logs'))
                 <li class="menu-item menu-item-submenu {{ Active(URL::to('/backend/groups*'),'menu-item-open active') }} {{ Active(URL::to('/backend/users*'),'menu-item-open active') }} {{ Active(URL::to('/backend/logs*'),'menu-item-open active') }}" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="#" class="menu-link menu-toggle">
                         <i class="menu-icon flaticon-users"></i>
@@ -282,7 +286,9 @@
                         </ul>
                     </div>
                 </li>
+                @endif
 
+                @if(\Helper::checkRules('list-photos,list-files'))
                 <li class="menu-item menu-item-submenu {{ Active(URL::to('/backend/photos*'),'menu-item-open active') }} {{ Active(URL::to('/backend/files*'),'menu-item-open active') }}" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="#" class="menu-link menu-toggle">
                         <i class="menu-icon flaticon-folder-1"></i>
@@ -316,7 +322,9 @@
                         </ul>
                     </div>
                 </li>
+                @endif
 
+                @if(\Helper::checkRules('list-variables,list-blockedUsers'))
                 <li class="menu-item menu-item-submenu {{ Active(URL::to('/backend/generalSettings*'),'menu-item-open active') }} {{ Active(URL::to('/backend/panelSettings*'),'menu-item-open active') }} {{ Active(URL::to('/backend/blockedUsers*'),'menu-item-open active') }}" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="#" class="menu-link menu-toggle">
                         <i class="menu-icon flaticon-settings-1"></i>
@@ -356,7 +364,7 @@
                         </ul>
                     </div>
                 </li>
-
+                @endif
                 <li class="menu-item {{ Active(URL::to('/backend/logout/')) }}" aria-haspopup="true">
                     <a href="{{ URL::to('/backend/logout/') }}" class="menu-link ">
                         <i class="menu-icon flaticon-logout"></i>

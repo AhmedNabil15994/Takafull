@@ -45,7 +45,7 @@ class GroupsControllers extends Controller {
             return Redirect('404');
         }
 
-        $data['permissions'] = config('permissions.mainIndexes');
+        $data['permissions'] = config('main-pers.mainIndexes');
         $data['data'] = Group::getData($groupObj);
         return view('Group.Views.edit')->with('data', (object) $data);      
     }
@@ -71,6 +71,10 @@ class GroupsControllers extends Controller {
         foreach ($input as $key => $oneItem) {
             if(strpos($key, 'list-') !== false){
                 $permissionsArr[] = $key;
+                $morePermission = explode(',', $oneItem);
+                foreach($morePermission as $onePer){
+                    $permissionsArr[] = $onePer;
+                }
             }
         }
 
@@ -88,7 +92,7 @@ class GroupsControllers extends Controller {
     }
 
     public function add() {
-        $data['permissions'] = config('permissions.mainIndexes');
+        $data['permissions'] = config('main-pers.mainIndexes');
         return view('Group.Views.add')->with('data', (object) $data);
     }
 
@@ -100,11 +104,15 @@ class GroupsControllers extends Controller {
             \Session::flash('error', $validate->messages()->first());
             return redirect()->back()->withInput();
         }
-        
+
         $permissionsArr = [];
         foreach ($input as $key => $oneItem) {
             if(strpos($key, 'list-') !== false){
                 $permissionsArr[] = $key;
+                $morePermission = explode(',', $oneItem);
+                foreach($morePermission as $onePer){
+                    $permissionsArr[] = $onePer;
+                }
             }
         }
 
@@ -163,6 +171,72 @@ class GroupsControllers extends Controller {
     }
     
     public function charts() {
-        return view('Group.Views.charts');
+        $input = \Request::all();
+        $now = date('Y-m-d');
+        $start = $now;
+        $end = $now;
+        $date = null;
+        if(isset($input['from']) && !empty($input['from']) && isset($input['to']) && !empty($input['to'])){
+            $start = $input['from'].' 00:00:00';
+            $end = $input['to'].' 23:59:59';
+            $date = 1;
+        }
+
+        $addCount = WebActions::getByDate($date,$start,$end,1,'Group')['count'];
+        $editCount = WebActions::getByDate($date,$start,$end,2,'Group')['count'];
+        $deleteCount = WebActions::getByDate($date,$start,$end,3,'Group')['count'];
+        $fastEditCount = WebActions::getByDate($date,$start,$end,4,'Group')['count'];
+
+        $data['chartData1'] = $this->getChartData($start,$end,1,'Group');
+        $data['chartData2'] = $this->getChartData($start,$end,2,'Group');
+        $data['chartData3'] = $this->getChartData($start,$end,4,'Group');
+        $data['chartData4'] = $this->getChartData($start,$end,3,'Group');
+        $data['counts'] = [$addCount , $editCount , $deleteCount , $fastEditCount];
+        $data['title'] = 'مجموعات المشرفين';
+        $data['miniTitle'] = 'مجموعات المشرفين';
+        $data['url'] = 'groups';
+
+        return view('TopMenu.Views.charts')->with('data',(object) $data);
+    }
+
+    public function getChartData($start=null,$end=null,$type,$moduleName){
+        $input = \Request::all();
+        
+        if(isset($input['from']) && !empty($input['from']) && isset($input['to']) && !empty($input['to'])){
+            $start = $input['from'];
+            $end = $input['to'];
+        }
+
+        $datediff = strtotime($end) - strtotime($start);
+        $daysCount = round($datediff / (60 * 60 * 24));
+        $datesArray = [];
+        $datesArray[0] = $start;
+
+        if($daysCount > 2){
+            for($i=0;$i<$daysCount;$i++){
+                $datesArray[$i] = date('Y-m-d',strtotime($start.'+'.$i."day") );
+            }
+            $datesArray[$daysCount] = $end;  
+        }else{
+            for($i=1;$i<24;$i++){
+                $datesArray[$i] = date('Y-m-d H:i:s',strtotime($start.'+'.$i." hour") );
+            }
+        }
+
+        $chartData = [];
+        $dataCount = count($datesArray);
+
+        for($i=0;$i<$dataCount;$i++){
+            if($dataCount == 1){
+                $count = WebActions::where('type',$type)->where('module_name',$moduleName)->where('created_at','>=',$datesArray[0].' 00:00:00')->where('created_at','<=',$datesArray[0].' 23:59:59')->count();
+            }else{
+                if($i < count($datesArray)){
+                    $count = WebActions::where('type',$type)->where('module_name',$moduleName)->where('created_at','>=',$datesArray[$i].' 00:00:00')->where('created_at','<=',$datesArray[$i].' 23:59:59')->count();
+                }
+            }
+            $chartData[0][$i] = $datesArray[$i];
+            $chartData[1][$i] = $count;
+        }
+        return $chartData;
     }
 }

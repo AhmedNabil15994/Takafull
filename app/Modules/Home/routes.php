@@ -5,5 +5,6 @@ Home
 ----------------------------------------------------------*/
 Route::group(['prefix' => '/'] , function () {
     Route::get('/', 'HomeControllers@index');
-	Route::post('/language', 'DashboardControllers@changeLang');
+	Route::post('/contactUs', 'HomeControllers@contactUs');
+	Route::post('/postOrder', 'HomeControllers@postOrder');
 });

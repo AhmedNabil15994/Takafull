@@ -110,7 +110,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					title: 'الاسم',
 					className: 'edits',
 					render: function(data, type, full, meta) {
-						return '<a href="#" class="editable" data-col="name" data-id="'+full.id+'">'+data+'</a>';
+						return '<a class="editable" data-col="name" data-id="'+full.id+'">'+data+'</a>';
 					},
 				},
 				{
@@ -118,7 +118,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					title: 'رقم الهوية او جواز السفر',
 					className: 'edits',
 					render: function(data, type, full, meta) {
-						return '<a href="#" class="editable" data-col="identity" data-id="'+full.id+'">'+data+'</a>';
+						return '<a class="editable" data-col="identity" data-id="'+full.id+'">'+data+'</a>';
 					},
 				},
 				{
@@ -126,7 +126,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					title: 'رقم الجوال',
 					className: 'edits',
 					render: function(data, type, full, meta) {
-						return '<a href="#" class="editable" data-col="phone" data-id="'+full.id+'">'+data+'</a>';
+						return '<a class="editable" data-col="phone" data-id="'+full.id+'">'+data+'</a>';
 					},
 				},
 				{
@@ -134,7 +134,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					title: 'المدينة',
 					className: 'edits',
 					render: function(data, type, full, meta) {
-						return '<a href="#" class="editable" data-col="city" data-id="'+full.id+'">'+data+'</a>';
+						return '<a class="editable" data-col="city" data-id="'+full.id+'">'+data+'</a>';
 					},
 				},
 				{
@@ -142,7 +142,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					title: 'العنوان',
 					className: 'edits',
 					render: function(data, type, full, meta) {
-						return '<a href="#" class="editable" data-col="address" data-id="'+full.id+'">'+data+'</a>';
+						return '<a class="editable" data-col="address" data-id="'+full.id+'">'+data+'</a>';
 					},
 				},
 				{
@@ -150,7 +150,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					title: 'الحالة',
 					className: 'edits selects',
 					render: function(data, type, full, meta) {
-						return '<a href="#" class="editable" data-col="status" data-id="'+full.id+'"><div class="btn btn-raised btn-warning waves-effect">'+data+'</div></a>';
+						return '<a class="editable" data-col="status" data-id="'+full.id+'"><div class="btn btn-raised btn-warning waves-effect">'+data+'</div></a>';
 					},
 				},
 				{
@@ -158,7 +158,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					title: 'تاريخ الارسال',
 					className: 'edits dates',
 					render: function(data, type, full, meta) {
-						return '<a href="#" class="editable" data-col="created_at" data-id="'+full.id+'">'+data+'</a>';
+						return '<a class="editable" data-col="created_at" data-id="'+full.id+'">'+data+'</a>';
 					},
 				},
 				{
@@ -166,7 +166,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					title: 'ملاحظات ادارية',
 					className: 'edits',
 					render: function(data, type, full, meta) {
-						return '<a href="#" class="editable" data-col="notes" data-id="'+full.id+'">'+data+'</a>';
+						return '<a class="editable" data-col="notes" data-id="'+full.id+'">'+data+'</a>';
 					},
 				},
 				{

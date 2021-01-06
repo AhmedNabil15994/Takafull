@@ -86,7 +86,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					title: 'اسم المستخدم',
 					className: 'edits',
 					render: function(data, type, full, meta) {
-						return '<a href="#" class="editable" data-col="username" data-id="'+full.id+'">'+data+'</a>';
+						return '<a class="editable" data-col="username" data-id="'+full.id+'">'+data+'</a>';
 					},
 				},
 				{
@@ -94,7 +94,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					title: 'البريد الالكتروني',
 					className: 'edits',
 					render: function(data, type, full, meta) {
-						return '<a href="#" class="editable" data-col="email" data-id="'+full.id+'">'+data+'</a>';
+						return '<a class="editable" data-col="email" data-id="'+full.id+'">'+data+'</a>';
 					},
 				},
 				{
@@ -102,7 +102,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					title: 'النوع',
 					className: 'edits selects',
 					render: function(data, type, full, meta) {
-						return '<a href="#" class="editable" data-col="group_id" data-id="'+full.id+'">'+data+'</a>';
+						return '<a class="editable" data-col="group_id" data-id="'+full.id+'">'+data+'</a>';
 					},
 				},
 				{

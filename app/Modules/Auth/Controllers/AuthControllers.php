@@ -141,7 +141,7 @@ class AuthControllers extends Controller {
         ]);
         session()->flush();
         \Session::flash('success', "نراك قريبا ;)");
-        return redirect('/');
+        return redirect('/backend/logout');
 	}
 
 }

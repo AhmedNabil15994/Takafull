@@ -83,7 +83,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					title: 'العنوان عربي',
 					className: 'edits',
 					render: function(data, type, full, meta) {
-						return '<a href="#" class="editable" data-col="title" data-id="'+full.id+'">'+data+'</a>';
+						return '<a class="editable" data-col="title" data-id="'+full.id+'">'+data+'</a>';
 					},
 				},
 				{

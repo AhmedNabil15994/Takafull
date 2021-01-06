@@ -105,7 +105,7 @@
                                 @foreach($data->permissions as $key => $onePermission)
                                 <div class="col-lg-6 col-sm-6">
                                     <label class="checkbox checkbox-success">
-                                    <input type="checkbox" name="{{ $onePermission['title'] }}" />
+                                    <input type="checkbox" name="{{ $onePermission['title'] }}" value="{{ $onePermission['modulePermissions'] }}" />
                                     <span></span>{{ $onePermission['viewTitle'] }}</label>
                                 </div>
                                 @endforeach

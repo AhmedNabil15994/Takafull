@@ -5,5 +5,7 @@
 <script src="{{ URL::to('/assets/js/owl.carousel.js') }}"></script>
 <script src="{{ URL::to('/assets/js/wow.min.js') }}"></script>
 <script src="{{ URL::to('/assets/js/scrollIt.min.js') }}"></script>
+<script src="{{ URL::to('/assets/js/toastr.min.js') }}"></script>
+<script src="{{ URL::to('/assets/components/notifications.js') }}"></script>
 <script src="{{ URL::to('/assets/js/custom.js') }}"></script>
 @yield('scripts')

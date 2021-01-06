@@ -1,6 +1,6 @@
 {{-- Extends layout --}}
 @extends('Layouts.master')
-@section('title','القوائم العلوية - الاحصائيات')
+@section('title',$data->title.' - الاحصائيات')
 
 @section('styles')
 <style type="text/css" media="screen">
@@ -74,7 +74,7 @@
             <!--begin::Page Heading-->
             <div class="d-flex align-items-baseline flex-wrap mr-5">
                 <!--begin::Page Title-->
-                <h3 class="text-dark font-weight-bold my-1 mr-5 m-subheader__title--separator">القوائم</h3>
+                <h3 class="text-dark font-weight-bold my-1 mr-5 m-subheader__title--separator">{{ $data->miniTitle }}</h3>
                 <!--end::Page Title-->
                 <!--begin::Breadcrumb-->
                 <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
@@ -82,7 +82,7 @@
                         <a href="{{ URL::to('/backend/dashboard') }}" class="text-muted"><i class="m-nav__link-icon la la-home"></i></a>
                     </li>
                     <li class="breadcrumb-item">
-                        <a href="{{ URL::to('/backend/topMenu') }}" class="text-muted">القوائم العلوية</a>
+                        <a href="{{ URL::to('/backend/'.$data->url) }}" class="text-muted">{{ $data->title }}</a>
                     </li>
                     <li class="breadcrumb-item">
                         <a href="{{ URL::current() }}" class="text-muted">الاحصائيات</a>
@@ -96,57 +96,66 @@
         <!--begin::Toolbar-->
         <div class="d-flex align-items-center">
             <!--begin::Dropdown-->
-            <div class='input-group' id='kt_daterangepicker_6'>
-                <span class="my-title"> Today : </span>
-                <input type='text' class="form-control" readonly="readonly" placeholder="Select date range" value="{{ date('M d') }} " />
-                <div class="input-group-append">
-                    <span class="input-group-text">
-                        <i class="la la-angle-down"></i>
-                    </span>
+            <form action="{{ URL::current() }}" class="chart-form" method="get" >
+                <div class='input-group' id='kt_daterangepicker_6'>
+                    <span class="my-title"> {{ \Request::has('to') ? date('M d',strtotime(Request::get('to'))).' - '  : 'Today :' }} </span>
+                    <input type="hidden" name="from">
+                    <input type="hidden" name="to">
+                    <input type='text' class="form-control" readonly="readonly" placeholder="Select date range" value="{{ \Request::has('from') ? date('M d',strtotime(Request::get('from')))  : date('M d') }} " />
+                    <div class="input-group-append">
+                        <span class="input-group-text">
+                            <i class="la la-angle-down"></i>
+                        </span>
+                    </div>
                 </div>
-            </div>
+            </form>
             <!--end::Dropdown-->
         </div>
         <!--end::Toolbar-->
     </div>
 </div>
 <!--begin::Cards-->
+<input type="hidden" name="chartData1" value="{{ json_encode($data->chartData1) }}">
+<input type="hidden" name="chartData2" value="{{ json_encode($data->chartData2) }}">
+<input type="hidden" name="chartData3" value="{{ json_encode($data->chartData3) }}">
+<input type="hidden" name="chartData4" value="{{ json_encode($data->chartData4) }}">
+<input type="hidden" name="counts" value="{{ json_encode($data->counts) }}">
 <div class="card card-custom gutter-b">
     <div class="card-body">
-        <h3 class="card-label">عدد اضافة القوائم</h3>
-        <p class="label-desc">هنا يتم عرض عدد اضافة القوائم في الموقع</p>
+        <h3 class="card-label">عدد اضافة {{ $data->miniTitle }}</h3>
+        <p class="label-desc">هنا يتم عرض عدد اضافة {{ $data->miniTitle }} في الموقع</p>
         <div id="chart_3"></div>
     </div>
 </div>
 
 <div class="card card-custom gutter-b">
     <div class="card-body">
-        <h3 class="card-label">عدد تعديل القوائم</h3>
-        <p class="label-desc">هنا يتم عرض عدد تعديل القوائم في الموقع</p>
+        <h3 class="card-label">عدد تعديل {{ $data->miniTitle }}</h3>
+        <p class="label-desc">هنا يتم عرض عدد تعديل {{ $data->miniTitle }} في الموقع</p>
         <div id="chart_1"></div>
     </div>
 </div>
 
 <div class="card card-custom gutter-b">
     <div class="card-body">
-        <h3 class="card-label">عدد تعديل سريع القوائم</h3>
-        <p class="label-desc">هنا يتم عرض عدد تعديل سريع القوائم في الموقع</p>
+        <h3 class="card-label">عدد تعديل سريع {{ $data->miniTitle }}</h3>
+        <p class="label-desc">هنا يتم عرض عدد تعديل سريع {{ $data->miniTitle }} في الموقع</p>
         <div id="chart_2"></div>
     </div>
 </div>
 
 <div class="card card-custom gutter-b">
     <div class="card-body">
-        <h3 class="card-label">عدد حذف القوائم</h3>
-        <p class="label-desc">هنا يتم عرض عدد حذف القوائم في الموقع</p>
+        <h3 class="card-label">عدد حذف {{ $data->miniTitle }}</h3>
+        <p class="label-desc">هنا يتم عرض عدد حذف {{ $data->miniTitle }} في الموقع</p>
         <div id="chart_5"></div>
     </div>
 </div>
 
 <div class="card card-custom gutter-b">
     <div class="card-body">
-        <h3 class="card-label">اجمالي عمليات القوائم</h3>
-        <p class="label-desc">هنا يتم عرض عدد جميع العمليات علي القوائم في الموقع</p>
+        <h3 class="card-label">اجمالي عمليات {{ $data->miniTitle }}</h3>
+        <p class="label-desc">هنا يتم عرض عدد جميع العمليات علي {{ $data->miniTitle }} في الموقع</p>
         <div id="chart_13"></div>
     </div>
 </div>
@@ -155,6 +164,5 @@
 
 {{-- Scripts Section --}}
 @section('scripts')
-<script src="{{ URL::to('/assets/js/pages/features/charts/apexcharts.js') }}"></script>
-<script src="{{ URL::to('/assets/js/pages/crud/forms/widgets/bootstrap-daterangepicker.js') }}"></script>
+<script src="{{ URL::to('/assets/components/charts.js') }}"></script>
 @endsection

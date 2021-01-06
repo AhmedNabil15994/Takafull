@@ -119,7 +119,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					title: 'تاريخ التحميل',
 					className: 'edits dates',
 					render: function(data, type, full, meta) {
-						return '<a href="#" class="editable" data-col="created_at" data-id="'+full.id+'">'+data+'</a>';
+						return '<a class="editable" data-col="created_at" data-id="'+full.id+'">'+data+'</a>';
 					},
 				},
 				{

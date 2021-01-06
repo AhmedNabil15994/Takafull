@@ -22,5 +22,5 @@
 <link href="{{ URL::to('/assets/css/themes/layout/aside/dark.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ URL::to('/assets/css/touches.css') }}" rel="stylesheet" type="text/css" />
 <!--end::Layout Themes-->
-<link rel="shortcut icon" href="{{ URL::to('/assets/media/logos/favicon.ico') }}" />
+<link rel="shortcut icon" href="{{ URL::to('/assets/images/favicon.ico') }}" />
 @yield('styles')

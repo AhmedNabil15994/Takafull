@@ -6,7 +6,9 @@
         <meta charset="utf-8">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{ \App\Models\Variable::getVar('العنوان عربي') }} - @yield('title')</title>
+        <meta name="description" content="{{ $data->desc }}">
+        <meta name="keywords" content="{{ $data->meta }}">
+        <title>{{ $data->title }} - @yield('title')</title>
         @include('Frontend.Layouts.head')
         @include('Partials.notf_messages')
     </head>

@@ -94,7 +94,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					title: 'الاسم بالكامل',
 					className: 'edits',
 					render: function(data, type, full, meta) {
-						return '<a href="#" class="editable" data-col="name" data-id="'+full.id+'">'+data+'</a>';
+						return '<a class="editable" data-col="name" data-id="'+full.id+'">'+data+'</a>';
 					},
 				},
 				{
@@ -102,7 +102,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					title: 'البريد الالكتروني',
 					className: 'edits',
 					render: function(data, type, full, meta) {
-						return '<a href="#" class="editable" data-col="email" data-id="'+full.id+'">'+data+'</a>';
+						return '<a class="editable" data-col="email" data-id="'+full.id+'">'+data+'</a>';
 					},
 				},
 				{
@@ -119,7 +119,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					title: 'محتوي الرسالة',
 					className: 'edits',
 					render: function(data, type, full, meta) {
-						return '<a href="#" class="editable" data-col="message" data-id="'+full.id+'">'+data+'</a>';
+						return '<a class="editable" data-col="message" data-id="'+full.id+'">'+data+'</a>';
 					},
 				},
 				{
@@ -128,7 +128,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					title: 'الرد',
 					className: 'edits',
 					render: function(data, type, full, meta) {
-						return '<a href="#" class="editable" data-col="reply" data-id="'+full.id+'">'+data+'</a>';
+						return '<a class="editable" data-col="reply" data-id="'+full.id+'">'+data+'</a>';
 					},
 				},
 				{
@@ -137,7 +137,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					title: 'تاريخ الارسال',
 					className: 'edits dates',
 					render: function(data, type, full, meta) {
-						return '<a href="#" class="editable" data-col="created_at" data-id="'+full.id+'">'+data+'</a>';
+						return '<a class="editable" data-col="created_at" data-id="'+full.id+'">'+data+'</a>';
 					},
 				},
 				{

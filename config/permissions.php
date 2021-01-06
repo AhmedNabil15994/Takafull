@@ -3,117 +3,14 @@
 
 return [
 
-    'mainIndexes' => [
-        'DashboardControllers@Dashboard' => [
-            'title'=>'list-dashboard',
-            'viewTitle'=>'الرئيسية',
-        ],
-        'TopMenuControllers@index' => [
-            'title'=>'list-topMenus',
-            'viewTitle'=>'القوائم العلوية',
-        ],
-        'BottomMenuControllers@index' => [
-            'title'=>'list-bottomMenus',
-            'viewTitle'=>'القوائم السفلية',
-        ],
-        'PageControllers@index' => [
-            'title'=>'list-pages',
-            'viewTitle'=>'الصفحات',
-        ],
-        'SliderControllers@index' => [
-            'title'=>'list-sliders',
-            'viewTitle'=>'الاسلايدر',
-        ],
-        'AdvantageControllers@index' => [
-            'title'=>'list-advantages',
-            'viewTitle'=>'مميزاتنا',
-        ],
-        'BenefitControllers@index' => [
-            'title'=>'list-benefits',
-            'viewTitle'=>'فوائدنا',
-        ],
-        'CityControllers@index' => [
-            'title'=>'list-cities',
-            'viewTitle'=>'المدن',
-        ],
-        'OrderControllers@index' => [
-            'title'=>'list-orders',
-            'viewTitle'=>'الطلبات',
-        ],
-        'OrderControllers@trashes' => [
-            'title'=>'list-trashes',
-            'viewTitle'=>'المهملات',
-        ],
-        // Requests Contact Us
-        
-        'OrderControllers@newOrders' => [
-            'title'=>'list-newOrders',
-            'viewTitle'=>'الطلبات الجديدة',
-        ],
-        'OrderControllers@sentOrders' => [
-            'title'=>'list-sentOrders',
-            'viewTitle'=>'الطلبات تم الارسال',
-        ],
-        'OrderControllers@delayedOrders' => [
-            'title'=>'list-delayedOrders',
-            'viewTitle'=>'الطلبات تأجلت',
-        ],
-        'OrderControllers@receivedOrders' => [
-            'title'=>'list-receivedOrders',
-            'viewTitle'=>'الطلبات تم التسليم',
-        ],
-        'OrderControllers@unRepliedOrders' => [
-            'title'=>'list-unRepliedOrders',
-            'viewTitle'=>'الطلبات عدم الرد',
-        ],
-        'OrderControllers@cancelledOrders' => [
-            'title'=>'list-cancelledOrders',
-            'viewTitle'=>'الطلبات ملغية',
-        ],
-        'ContactUsControllers@index' => [
-            'title'=>'list-contactUs',
-            'viewTitle'=>'الاتصال بنا',
-        ],
-        'GroupsControllers@index' => [
-            'title'=>'list-groups',
-            'viewTitle'=>'مجموعات المشرفين',
-        ],
-        'UsersControllers@index' => [
-            'title'=>'list-users',
-            'viewTitle'=>'المشرفين والاداريين',
-        ],
-        'LogControllers@index' => [
-            'title'=>'list-logs',
-            'viewTitle'=>'سجلات الدخول للنظام',
-        ],
-        'PhotoControllers@index' => [
-            'title'=>'list-photos',
-            'viewTitle'=>'مكتبة الصور',
-        ],
-        'FileControllers@index' => [
-            'title'=>'list-files',
-            'viewTitle'=>'مكتبة الملفات',
-        ],
-        'VariablesControllers@index' => [
-            'title'=>'list-variables',
-            'viewTitle'=>'اعدادات عامة',
-        ],
-        'VariablesControllers@panel' => [
-            'title'=>'list-variables2',
-            'viewTitle'=>'اعدادات لوحة التحكم',
-        ],
-        'BlockedUsersControllers@index' => [
-            'title'=>'list-blockedUsers',
-            'viewTitle'=>'الاعضاء المحظورة',
-        ],        
-
-    ],
 
     'HomeControllers@index' => 'general',
     'AuthControllers@login' => 'login',
     'AuthControllers@doLogin' => 'doLogin',
     'AuthControllers@logout' => 'logout',
     'AuthControllers@register' => 'register',
+
+    'DashboardControllers@Dashboard' => 'list-dashboard',
 
     'UsersControllers@index' => 'list-users',
     'UsersControllers@edit' => 'edit-user',

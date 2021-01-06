@@ -8,14 +8,14 @@
 @section('content')
 	<div class="slider">
         <ul id="slider" class="the-slider-inner">
+            @foreach($data->sliders as $slider)
             <li>
                 <div class="background-slider"></div>
-                <img src="{{ URL::to('/assets/images/sliderImg.png') }}" alt="" />
+                <img src="{{ $slider->photo }}" alt="" />
                 <div class="sliderDetails">
                     <div class="container">
                		 	<div class="titleSlider">
-               		 		نقدم لكم بطاقة تكافل العربية تمنح حاملها خصم على
-							جميع التخصصات الطبية في القطاع الصحي
+               		 		{!! $slider->title !!}
 						</div>
 						<div class="clearfix">
 							<a href="{{ \App\Models\Variable::getVar('الفيديو التعريفى:') }}" data-toggle="modal" data-target="#video">الفيديو التعريفي</a>
@@ -23,24 +23,8 @@
 						</div>
                     </div>
                 </div>
-            </li>
-            <li>
-                <div class="background-slider"></div>
-                <img src="{{ URL::to('/assets/images/sliderImg.png') }}" alt="" />
-                <div class="sliderDetails">
-                    <div class="container">
-               		 	<div class="titleSlider">
-               		 		نقدم لكم بطاقة تكافل العربية تمنح حاملها خصم على
-							جميع التخصصات الطبية في القطاع الصحي
-						</div>
-						<div class="clearfix">
-							<a href="{{ \App\Models\Variable::getVar('الفيديو التعريفى:') }}" data-toggle="modal" data-target="#video">الفيديو التعريفي</a>
-							<a href="#" data-scroll-nav="1">اشترك الآن</a>
-						</div>
-                    </div>
-                </div>
-            </li>   
-         
+            </li> 
+            @endforeach        
         </ul>
         <ul class="list-unstyled the-slider-control">
             <li><span id="slider-next"></span></li>
@@ -59,39 +43,33 @@
 							<h2 class="titleForm">طلب بطاقة جديدة</h2>
 							<div class="inputStyle">
 								<label class="nameInput">الإسم :</label>
-								<input type="text" placeholder="ضع اسمك الثلاثي هنا" />
+								<input type="text" name="name" placeholder="ضع اسمك الثلاثي هنا" />
 							</div>
 							<div class="inputStyle">
 								<label class="nameInput">رقم الهوية أو جواز السفر :</label>
-								<input type="number" placeholder="ضع رقم الهوية أو جواز السفر" />
-							</div>
-							<div class="inputStyle">
-								<label class="nameInput dateInput">ضع تاريخ ميلادك هنا :</label>
-								<input type="text" id="dateInput" class="datepicker" placeholder="ضع تاريخ ميلادك هنا" />
-								<label for="dateInput" class="iconLeft fa fa-angle-down"></label>
+								<input type="number" name="identity" placeholder="ضع رقم الهوية أو جواز السفر" />
 							</div>
 							<div class="inputStyle inputNumb">
 								<label class="nameInput">أضف رقم جوالك الحالي</label>
-								<input type="number" id="inputNumb" placeholder="رقم الجوال :" />
-								<i class="numberIcon fa fa-plus"></i>
+								<input type="number" name="phone" id="inputNumb" placeholder="رقم الجوال :" />
+								{{-- <i class="numberIcon fa fa-plus"></i> --}}
 							</div>
 							<div class="inputStyle">
 								<label class="nameInput">المدينة :</label>
-								<select class="selectmenu" id="selectmenu">
-									<option>الرياض</option>
-									<option>المدينة</option>
-									<option>المدينة</option>
-									<option>المدينة</option>
+								<select class="selectmenu" name="city" id="selectmenu">
+									@foreach($data->cities as $city)
+									<option value="{{ $city->title }}">{{ $city->title }}</option>
+									@endforeach
 								</select>
 								<label for="selectmenu" class="iconLeft fa fa-angle-down"></label>
 							</div>
 							<div class="inputStyle">
 								<label class="nameInput">أضف العنوان بشكل صحيح</label>
-								<input type="number" placeholder="العنوان :" />
+								<input type="text" name="address" placeholder="العنوان :" />
 							</div>
 							<div class="inputStyle">
-								<label class="nameInput">اكتب الرقم الظاهر امامك : <span>93</span></label>
-								<input type="number" placeholder="أضف الرقم هنا" />
+								<label class="nameInput">اكتب الرقم الظاهر امامك : <span class="rand">{{ rand(20,100) }}</span></label>
+								<input type="number" name="check" placeholder="أضف الرقم هنا" />
 							</div>
 							<div class="checkDiv">
 								<span class="text">
@@ -102,7 +80,7 @@
 								  <span class="sliderSwitch round"></span>
 								</label>
 							</div>
-							<button>ارسل الآن</button>
+							<button class="sentRequest">ارسل الآن</button>
 						
 						</form>
 						
@@ -139,131 +117,30 @@
 			<div class="tabs">
 				<div class="tab1 tab">
 					<div class='row'>
+						@foreach($data->advantages as $advantage)
 						<div class="col-md-4 wow fadeInUp">
 							<div class="itemFeatures">
-								<i class="flaticon-team"></i>
+								<i class="{{ $advantage->icon }}"></i>
 								<div class="desc">
-									تشمل جميع فئات المجتمع  حكومين ـ 
-									قطاع خاص ـ مقيمين ـ زائرين ـ عمره او حج
+									{!! $advantage->title !!}
 								</div>
 							</div>
 						</div>
-						<div class="col-md-4 wow fadeInUp">
-							<div class="itemFeatures">
-								<i class="flaticon-money-bag"></i>
-								<div class="desc">
-									السعر موحد للجميع وعدم ارتفاعها  لكبار 
-									السن ومعاناتهم من اسعار بطاقات التأمين
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 wow fadeInUp">
-							<div class="itemFeatures">
-								<i class="flaticon-check-mark"></i>
-								<div class="desc">
-									يمكن استخدام البطاقة 
-									<br>
-									مباشرةً
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-4 wow fadeInUp">
-							<div class="itemFeatures">
-								<i class="flaticon-id-card-2"></i>
-								<div class="desc">
-									يمكن استخدام البطاقة 
-									مباشرةً عند الحصول عليها
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 wow fadeInUp">
-							<div class="itemFeatures">
-								<i class="flaticon-profit"></i>
-								<div class="desc">
-									لا يوجد حد ائتماني لاستخدام 
-									<br>
-									البطاقة
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 wow fadeInUp">
-							<div class="itemFeatures">
-								<i class="flaticon-social-care"></i>
-								<div class="desc">
-									بطاقة تكافل تقدم خدمات انسانية 
-									واقتصادية للمجتمع تتوافق مع رؤية 2030
-								</div>
-							</div>
-						</div>
+						@endforeach
 					</div>
 		
 				</div>
 				<div class="tab2 tab">
 					<div class='row'>
+						@foreach($data->benefits as $benefit)
 						<div class="col-md-3 wow fadeInUp">
 							<div class="itemFeatures">
-								<i class="flaticon-heart"></i>
-								<div class="desc">تغطي جميع 
-									<br>
-									التخصصات الطبية
-									</div>
-							</div>
-						</div>
-						<div class="col-md-3 wow fadeInUp">
-							<div class="itemFeatures">
-								<i class="flaticon-surgery"></i>
-								<div class="desc">خصم على العمليات 
-									<br>
-									الجراحية والتجميلية
+								<i class="{{ $benefit->icon }}"></i>
+								<div class="desc">{!! $benefit->title !!}
 								</div>
 							</div>
 						</div>
-						<div class="col-md-3 wow fadeInUp">
-							<div class="itemFeatures">
-								<i class="flaticon-scientist"></i>
-								<div class="desc">خصم على كافة
-									<br>
-									 الفحوصات والتحاليل</div>
-							</div>
-						</div>
-						<div class="col-md-3 wow fadeInUp">
-							<div class="itemFeatures">
-								<i class="flaticon-maternity"></i>
-								<div class="desc">خصم على الولادة الطبيعية
-									<br>
-									 والقيصرية ومتابعة الحمل
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-4 wow fadeInUp">
-							<div class="itemFeatures">
-								<i class="flaticon-vision"></i>
-								<div class="desc">تخصم على تصحيح النظر بالليزك
-									<br>
-									 والليزر والنظارات الشمسية والطبية
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 wow fadeInUp">
-							<div class="itemFeatures">
-								<i class="flaticon-makeup-1"></i>
-								<div class="desc">خصم على العناية
-									<br>
-									 بالبشرة</div>
-							</div>
-						</div>
-						<div class="col-md-4 wow fadeInUp">
-							<div class="itemFeatures">
-								<i class="flaticon-braces"></i>
-								<div class="desc">خصم على جميع خدمات الاسنان الحشو والتركيبات
-									 وتقويم الاسنان حتى التجميلية
-								</div>
-							</div>
-						</div>
+						@endforeach
 					</div>
 				</div>
 			</div>
@@ -274,9 +151,9 @@
 
     <div class="JoinNow background-cover">
 	  	<div class="container">
-				<h2 class="title">عرض لفترة محدودة</h2>
+			<h2 class="title">{!! $data->pages[1]->title !!}</h2>
 	   		<div class="desc">
-	   		 سنة عليك وسنة علينا فقط بـ 200 ريال لمدة سنتين 
+	   		 {!! $data->pages[1]->description !!} 
 	   		</div>
 	   		<div class="btns">
 		   		<a href="{{ \App\Models\Variable::getVar('الفيديو التعريفى:') }}" data-toggle="modal" data-target="#video" class="btnVid wow fadeInUp flaticon-play-button"></a>
@@ -293,4 +170,5 @@
 @endsection
 
 @section('scripts')
+<script src="{{ URL::to('/assets/components/home.js') }}"></script>
 @endsection
