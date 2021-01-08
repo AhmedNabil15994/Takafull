@@ -381,7 +381,7 @@ jQuery(document).ready(function () {
         start = moment(from);
         end = moment(to);
     }else{
-        start = moment().subtract(29, 'days');
+        start = moment();
         end = moment();
     }
 
@@ -402,6 +402,8 @@ jQuery(document).ready(function () {
         },
         locale:{
             customRangeLabel: 'فترة محددة',
+            cancelLabel: 'الغاء',
+            applyLabel: 'بحث',
         },
         daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
         monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
@@ -417,6 +419,7 @@ jQuery(document).ready(function () {
 
     $(".timlines").niceScroll({
         railalign: 'left',
+        cursorcolor: '#2ca189',
     });
 
 

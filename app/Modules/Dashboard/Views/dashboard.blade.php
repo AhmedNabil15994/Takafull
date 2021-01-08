@@ -62,10 +62,10 @@
         display: none !important; 
     }
     .m--font-brand {
-        color: #2ca189 !important;
+        color: #9816f4 !important;
     }
     .label-brand {
-        background-color: #2ca189 !important;
+        background-color: #9816f4 !important;
         color: #FFF;
     }
     .text-brand{

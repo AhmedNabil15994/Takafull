@@ -391,6 +391,9 @@ div.dataTables_wrapper {
 .label-desc{
 	color: #9699a2;
 }
+.toast{
+  opacity: 1 !important
+}
 #toast-container > div{
   padding: 15px !important;
 }
@@ -550,6 +553,16 @@ table.dataTable>thead>tr>th:not(.sorting_disabled){
 .dt-button-collection .dropdown-item:hover{
 	color: #FFF !important;
 	background-color: #2ca189 !important;
+}
+.daterangepicker .drp-calendar td.active{
+	background-color: #2ca189 !important;
+}
+.daterangepicker .drp-calendar td.today,
+.daterangepicker .drp-calendar td.today.active{
+	color: #2ca189 !important;
+}
+div.ranges ul li:not(.active):hover{
+	color: #2ca189 !important;
 }
 @media (max-width: 767px){
 	.col-xs-4 {

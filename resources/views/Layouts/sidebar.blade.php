@@ -30,7 +30,7 @@
 		<div id="kt_aside_menu" class="aside-menu my-4" data-menu-vertical="1" data-menu-scroll="1" data-menu-dropdown-timeout="500">
 			<!--begin::Menu Nav-->
 			<ul class="menu-nav">
-                <li class="menu-item {{ Active(URL::to('/backend/dashboard')) }}" aria-haspopup="true">
+                <li class="menu-item {{ Active(URL::to('/backend/dashboard*')) }}" aria-haspopup="true">
                     <a href="{{ URL::to('/backend/dashboard/') }}" class="menu-link ">
                         <i class="menu-icon flaticon-dashboard"></i>
                         <span class="menu-text">الرئيسية</span>
