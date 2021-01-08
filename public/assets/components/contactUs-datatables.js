@@ -112,7 +112,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					targets: 3,
 					title: 'الجوال',
 					render: function(data, type, full, meta) {
-						return '<a target="_BLANK" href="https://web.whatsapp.com/?send='+data+'&text=hello">'+
+						return '<a target="_BLANK" href="https://api.whatsapp.com/send?phone='+data+'">'+
 									'<div style="width:100%;" class="btn btn-success btn-shadow-hover font-weight-bold mr-2" data-id="'+full.id+'">'+data+'</div>'+
 								'</a>';
 					},
