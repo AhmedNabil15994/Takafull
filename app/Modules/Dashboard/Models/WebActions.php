@@ -70,9 +70,49 @@ class WebActions extends Model{
         $data->label = $types[1];
         $data->username = $source->created_by != 0 || $source->created_by != null ? $source->User->username: '';
         $data->module_name = $source->module_name;
+        $data->module_page = self::getPageTitle($source->module_name);
         $data->created_at = \Helper::formatDateForDisplay($source->created_at,true);
         $data->created_at2 = \Carbon\Carbon::createFromTimeStamp(strtotime($source->created_at))->diffForHumans();
         return $data;
+    }
+
+    static function getPageTitle($name){
+        $text = '';
+        if($name == 'TopMenu'){
+            $text = 'القوائم العليوة';
+        }elseif($name == 'BottomMenu'){
+            $text = 'القوائم السفلية';
+        }elseif($name == 'Advantage'){
+            $text = 'مميزاتنا';
+        }elseif($name == 'Benefit'){
+            $text = 'فوائدنا';
+        }elseif($name == 'City'){
+            $text = 'المدن';
+        }elseif($name == 'Page'){
+            $text = 'الصفحات';
+        }elseif($name == 'Slider'){
+            $text = 'الاسلايدر';
+        }elseif($name == 'ContactUs'){
+            $text = 'الاتصال بنا';
+        }elseif($name == 'Variable'){
+            $text = 'الاعدادات';
+        }elseif($name == 'Photo'){
+            $text = 'مكتبة الصور';
+        }elseif($name == 'File'){
+            $text = 'مكتبة الملفات';
+        }elseif($name == 'Group'){
+            $text = 'مجموعات المشرفين';
+        }elseif($name == 'User'){
+            $text = 'المشرفين والاداريين';
+        }elseif($name == 'Log'){
+            $text = 'سجلات الدخول للنظام';
+        }elseif($name == 'BlockedUser'){
+            $text = 'الاغضاء المحظورة';
+        }elseif($name == 'Order'){
+            $text = 'الطلبات';
+        }
+
+        return $text;
     }
 
     static function getType($type){

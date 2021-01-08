@@ -3,7 +3,7 @@
   <!--begin::Head-->
   <head>
     <meta charset="utf-8" />
-    <title>تكافل | تسجيل الدخول</title>
+    <title>تكافل | تغيرر كلمة المرور</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <!--begin::Fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
@@ -47,28 +47,19 @@
             <!--begin::Login Sign in form-->
             <div class="login-signin animate__animated">
               <div class="mb-20">
-                <h3>تسجيل الدخول للوحة التحكم</h3>
+                <h3>تغيير كلمة المرور</h3>
                 <!-- <p class="opacity-60 font-weight-bold">Enter your details to login to your account:</p> -->
               </div>
-              <form class="form" id="kt_login_signin_form" action="{{ URL::to('/backend/login') }}" method="post">
+              <form class="form" id="kt_login_signin_form" action="{{ URL::current() }}" method="post">
                 @csrf
                 <div class="form-group">
-                  <input class="form-control h-auto text-right text-updated placeholder-white opacity-70 bg-dark-o-70 rounded-pill border-0 py-4 px-8 mb-5" type="text" placeholder="اسم المستخدم" name="username" autocomplete="off" />
+                  <input class="form-control h-auto text-right text-updated placeholder-white opacity-70 bg-dark-o-70 rounded-pill border-0 py-4 px-8 mb-5" type="password" placeholder="كلمة المرور الجديدة" name="password" />
                 </div>
                 <div class="form-group">
-                  <input class="form-control h-auto text-right text-updated placeholder-white opacity-70 bg-dark-o-70 rounded-pill border-0 py-4 px-8 mb-5" type="password" placeholder="كلمة المرور" name="password" />
-                </div>
-                <div class="form-group d-flex flex-wrap justify-content-between align-items-center px-8">
-                  <a href="javascript:;" id="kt_login_forgot" class="text-updated font-weight-bold">نسيت كلمة المرور ؟</a>
-                  <div class="checkbox-inline">
-                    <label class="checkbox checkbox-outline checkbox-white text-muted font-b m-0">
-                      <input type="checkbox" name="remember" />
-                      تذكرني<span></span>
-                    </label>
-                  </div>
+                  <input class="form-control h-auto text-right text-updated placeholder-white opacity-70 bg-dark-o-70 rounded-pill border-0 py-4 px-8 mb-5" type="password" placeholder="اعد كلمة المرور الجديدة" name="password_confirmation" />
                 </div>
                 <div class="form-group text-center mt-10">
-                  <button id="kt_login_signin_submit" class="btn btn-pill btn-outline-brand font-weight-bold opacity-90 px-15 py-3">انطلق</button>
+                  <button id="kt_login_signin_submit" class="btn btn-pill btn-outline-brand font-weight-bold opacity-90 px-15 py-3">تغيير</button>
                 </div>
               </form>
               <div class="mt-10">
@@ -77,24 +68,6 @@
               </div>
             </div>
             <!--end::Login Sign in form-->
-            <!--begin::Login forgot password form-->
-            <div class="login-forgot animate__animated">
-              <div class="mb-20">
-                <h3>نسيت كلمة المرور ؟</h3>
-                <p class="opacity-60">أدخل بريدك الإلكتروني لإعادة تعيين كلمة المرور الخاصة بك:</p>
-              </div>
-              <form class="form" id="kt_login_forgot_form" method="post">
-                @csrf
-                <div class="form-group mb-10">
-                  <input class="form-control h-auto text-right text-updated placeholder-white opacity-70 bg-dark-o-70 rounded-pill border-0 py-4 px-8 mb-5" type="email" placeholder="البريد الالكتروني" name="email" autocomplete="off" />
-                </div>
-                <div class="form-group">
-                  <button id="kt_login_forgot_cancel" class="btn btn-pill btn-outline-white font-weight-bold opacity-70 px-15 py-3 m-2">الغاء</button>
-                  <button id="kt_login_forgot_submit" class="btn btn-pill btn-outline-brand font-weight-bold opacity-90 px-15 py-3 m-2">طلب</button>
-                </div>
-              </form>
-            </div>
-            <!--end::Login forgot password form-->
           </div>
         </div>
       </div>
@@ -109,8 +82,6 @@
     <script src="{{ asset('/assets/plugins/global/plugins.bundle.js') }}"></script>
     <script src="{{ asset('/assets/plugins/custom/prismjs/prismjs.bundle.js') }}"></script>
     <script src="{{ asset('/assets/js/scripts.bundle.js') }}"></script>
-    <script src="{{ asset('/assets/components/notifications.js') }}"></script>
-    <script src="{{ asset('/assets/components/login.js') }}"></script>
   </body>
   <!--end::Body-->
 </html>

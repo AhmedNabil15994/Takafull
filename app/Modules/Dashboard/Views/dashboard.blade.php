@@ -13,14 +13,14 @@
         cursor: pointer;
     }
     #kt_daterangepicker_6:hover .input-group-text{
-        background-color: #564FC0;
+        background-color: #2ca189;
     } 
     #kt_daterangepicker_6 input{
         display: inline-block;
         width: 50px;
         padding-left: 2px;
         padding-right: 2px;
-        color: #716aca !important;
+        color: #2ca189 !important;
         font-weight: bold;
     }
     .input-group-append{
@@ -30,12 +30,12 @@
         display: block;
         padding: 10px 5px;
         color: #fff;
-        background-color: #716aca;
-        border-color: #716aca;
+        background-color: #2ca189;
+        border-color: #2ca189;
         width: 32px;
         height: 32px;
         transition: all ease-in-out .25s;
-        border-radius: 50%;
+        border-radius: 50% !important;
     }
     .input-group>.form-control:not(:last-child){
         border: 0;
@@ -51,9 +51,9 @@
         margin: 5px 10px 5px 5px;
     }
     .daterangepicker .ranges li.active {
-        background: #716aca;
+        background: #2ca189;
         color: #fff;
-        border: 1px solid #716aca;
+        border: 1px solid #2ca189;
     }
     .daterangepicker .ranges li{
         text-align: right;
@@ -62,14 +62,14 @@
         display: none !important; 
     }
     .m--font-brand {
-        color: #716aca !important;
+        color: #2ca189 !important;
     }
     .label-brand {
-        background-color: #716aca !important;
+        background-color: #2ca189 !important;
         color: #FFF;
     }
     .text-brand{
-        color: #716aca !important;
+        color: #2ca189 !important;
     }
     .col.px-6.rounded-xl{
         background-color: #FFF !important;
@@ -137,6 +137,7 @@
                             <i class="la la-angle-down"></i>
                         </span>
                     </div>
+                    <div class="clearfix"></div>
                 </div>
             </form>
             <!--end::Dropdown-->
@@ -177,6 +178,8 @@
                     </div>
                 </div>
             </div>
+            <input type="hidden" id="froms" value="{{ \Request::get('from') }}">
+            <input type="hidden" id="tos" value="{{ \Request::get('to') }}">
             <!--end::Header-->
             <!--begin::Body-->
             <div class="card-body p-0 position-relative overflow-hidden">
@@ -244,7 +247,7 @@
             </div>
             <!--end::Header-->
             <!--begin::Body-->
-            <div class="card-body pt-4 tiles">
+            <div class="card-body pt-4 tiles timlines">
                 @foreach($data->webActions as $action)
                 <!--begin::Timeline-->
                 <div class="timeline timeline-6 mt-3">
@@ -258,7 +261,7 @@
                         </div>
                         <!--end::Badge-->
                         <!--begin::Text-->
-                        <div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">{{ $action->username }} قام {{ $action->typeText }} بيانات في {{ $action->module_name }}s <label class="label label-{{ $action->label }} label-wide label-inline">{{ $action->typeText }}</label></div>
+                        <div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">{{ $action->username }} قام {{ $action->typeText }} بيانات في {{ $action->module_page }} <label class="label label-{{ $action->label }} label-wide label-inline">{{ $action->typeText }}</label></div>
                         <!--end::Text-->
                         <div class="timeline-label font-weight-bolder text-dark-75 font-size-lg text-muted">{{ $action->created_at2 }}</div>
                     </div>

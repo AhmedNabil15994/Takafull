@@ -137,19 +137,6 @@ $('#kt_datetimepicker_7_1').datetimepicker({
     format: 'YYYY-MM-DD'
 });
 
-$('.selectAll').on('click',function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    $('input[type="checkbox"]').attr('checked','checked');
-    $('input[type="checkbox"]').parents('tr').addClass('selected');
-});
-$('.deselectAll').on('click',function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    $('input[type="checkbox"]').attr('checked',false);
-    $('input[type="checkbox"]').parents('tr').removeClass('selected');
-});
-
 $('.moveToTrash').on('click',function(e){
     e.preventDefault();
     e.stopPropagation();

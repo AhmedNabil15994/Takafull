@@ -374,9 +374,16 @@ if (typeof module !== 'undefined') {
 
 jQuery(document).ready(function () {
     KTWidgets.init();
-
-    var start = moment().subtract(29, 'days');
-    var end = moment();
+    var from = $('input#froms').val();
+    var to = $('input#tos').val();
+    var start,end;
+    if(from && to){
+        start = moment(from);
+        end = moment(to);
+    }else{
+        start = moment().subtract(29, 'days');
+        end = moment();
+    }
 
     $('#kt_daterangepicker_6').daterangepicker({
         buttonClasses: ' btn',
@@ -386,14 +393,16 @@ jQuery(document).ready(function () {
         startDate: start,
         endDate: end,
         ranges: {
-           'Today': [moment(), moment()],
-           'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-           'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-           'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-           'This Month': [moment().startOf('month'), moment().endOf('month')],
-           'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+           'اليوم': [moment(), moment()],
+           'امس': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+           'اخر 7 ايام': [moment().subtract(6, 'days'), moment()],
+           'اخر 30 يوم': [moment().subtract(29, 'days'), moment()],
+           'هذا الشهر': [moment().startOf('month'), moment().endOf('month')],
+           'الشهر الماضي': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
         },
-        customRangeLabel: 'Custom',
+        locale:{
+            customRangeLabel: 'فترة محددة',
+        },
         daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
         monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
     });
@@ -406,7 +415,9 @@ jQuery(document).ready(function () {
         $('.chart-form').submit();    
     });
 
-
+    $(".timlines").niceScroll({
+        railalign: 'left',
+    });
 
 
 });

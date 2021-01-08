@@ -1,0 +1,76 @@
+body,html{
+  font-family: 'Tajawal', sans-serif;
+}
+.toast{
+  opacity: 1 !important
+}
+#toast-container > div{
+  padding: 15px !important;
+}
+.toast .toast-title{
+  text-align: right;
+  direction: rtl;
+}
+.toast .toast-title,
+.toast .toast-message{
+  padding: 0 30px;
+}
+.toast .toast-message{
+  font-weight: bold;
+  font-size: 14px;
+}
+.font-b{
+  font-weight: bold !important;
+}
+input.text-updated::placeholder {
+  color: #91899f !important;
+}
+input.text-updated{
+  color: #91899f !important;
+  background-color: #f7f6f9 !important;
+}
+.form-group .btn-pill{
+  background-color: #2ca189;
+  border-color: #2ca189;
+  color: #FFF;
+  font-family: 'Tajawal', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  display: inline-block;
+  text-align: center;
+  padding: 1.4rem 4rem !important;
+  margin-top: 0.8rem;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(152,22,244,0.19) !important;
+  box-shadow: 0px 5px 10px 2px rgba(152,22,244,0.19) !important;
+}
+.checkbox.checkbox-outline.checkbox-white>input~span{
+  margin-left: 10px;
+}
+.checkbox.checkbox-outline.checkbox-white>input:checked~span{
+  border: 1px solid #2ca189;
+}
+.checkbox.checkbox-outline.checkbox-white>input:checked~span:after{
+  border: solid #2ca189;
+}
+#kt_login_forgot{
+  color: #aba5b6;
+}
+#kt_login_signin_submit{
+  transition: all ease-in-out .25s;
+}
+#kt_login_signin_submit:hover,
+#kt_login_forgot_submit:hover{
+  color: #FFF !important;
+  background-color: #24826e;
+}
+#kt_login_forgot_cancel{
+  border-color: #2ca189;
+  color: #2ca189;
+  background-color: #fff !important;
+  transition: all ease-in-out .25s;
+}
+#kt_login_forgot_cancel:hover{
+  border-color: #2ca189;
+  color: #fff;
+  background-color: #2ca189 !important;
+}

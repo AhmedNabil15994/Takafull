@@ -106,7 +106,7 @@
                                 @foreach($data->permissions as $key => $onePermission)
                                 <div class="col-lg-6 col-sm-6">
                                     <label class="checkbox checkbox-success">
-                                    <input type="checkbox" {{ in_array($onePermission['title'],$data->data->permissions) ? 'checked' : '' }} name="{{ $onePermission['title'] }}" value="{{ $onePermission['modulePermissions'] }}" />
+                                    <input type="checkbox" {{ $data->data->permissions != '' && in_array($onePermission['title'],$data->data->permissions) ? 'checked' : '' }} name="{{ $onePermission['title'] }}" value="{{ $onePermission['modulePermissions'] }}" />
                                     <span></span>{{ $onePermission['viewTitle'] }}</label>
                                 </div>
                                 @endforeach

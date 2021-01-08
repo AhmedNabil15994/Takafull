@@ -83,7 +83,7 @@ class SliderControllers extends Controller {
             $imagesData->update(['imageable_id'=>$menuObj->id]);
             foreach ($imagesData->get() as $image) {
                 if($image->link == $image->filename){
-                    $image->link = \URL::to('/uploads').'/sliders/'.$menuObj->id.'/'.$image->filename;
+                    $image->link = asset('/uploads').'/sliders/'.$menuObj->id.'/'.$image->filename;
                     $image->save();
 
                     $menuObj->image = $image->filename;
@@ -122,7 +122,7 @@ class SliderControllers extends Controller {
             $imagesData->update(['imageable_id'=>$menuObj->id]);
             foreach ($imagesData->get() as $image) {
                 if($image->link == $image->filename){
-                    $image->link = \URL::to('/uploads').'/sliders/'.$menuObj->id.'/'.$image->filename;
+                    $image->link = asset('/uploads').'/sliders/'.$menuObj->id.'/'.$image->filename;
                     $image->save();
 
                     $menuObj->image = $image->filename;

@@ -18,6 +18,7 @@
 <script src="{{ asset('/assets/js/pages/crud/forms/widgets/select2.js') }}"></script>
 <script src="{{ asset('/assets/js/pages/features/miscellaneous/sweetalert2.js') }}"></script>
 <script src="{{ asset('/assets/components/notifications.js') }}"></script>
+<script src="{{ asset('/assets/js/jquery.nicescroll.min.js') }}"></script>
 <!--end::Page Vendors-->
 <!--begin::Page Scripts(used by this page)-->
 <!--end::Page Scripts-->

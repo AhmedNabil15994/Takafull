@@ -4,14 +4,17 @@ use App\Models\User;
 use App\Models\LoginHistory;
 use App\Models\BlockedUser;
 use App\Models\Variable;
+use App\Helpers\MailHelper;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Crypt;
+
 
 class AuthControllers extends Controller {
 
     use \TraitsFunc;
 
     public function __construct(){
-        $this->middleware('withAuth',['except' => ['login','doLogin']]);
+        $this->middleware('withAuth',['except' => ['login','doLogin','resetPassword','changePassword','completeReset']]);
     }
 
     public function login() {
@@ -119,7 +122,7 @@ class AuthControllers extends Controller {
     public function checkFailAttempts($attempts,$username){
         $newNumber = $attempts + 1; 
         session()->put('login.attempts', $newNumber);
-        if($newNumber == 3){
+        if($newNumber == 3 && $username){
             $now = now()->format('Y-m-d H:i:s');
             $banPeriod = Variable::getVar('مدة الحظر:');
             $endedTime = date('Y-m-d H:i:s', strtotime('+'.$banPeriod. ' minutes', strtotime($now)));
@@ -143,5 +146,75 @@ class AuthControllers extends Controller {
         \Session::flash('success', "نراك قريبا ;)");
         return redirect('/backend/logout');
 	}
+
+    public function resetPassword(){
+        $input = \Request::all();
+        $rules = [
+            'email' => 'required|email',
+        ];
+
+        $message = [
+            'email.required' => "يرجي ادخال البريد الالكتروني",
+            'email.email' => "يرجي ادخال صيغة صحيحة للبريد الالكتروني",
+        ];
+
+        $validate = \Validator::make($input, $rules, $message);
+
+        if($validate->fails()){
+            return \TraitsFunc::ErrorMessage($validate->messages()->first());
+        }
+
+        $email = $input['email'];
+        $userObj = User::checkUserByEmail($email);
+
+        if ($userObj == null) {
+            return \TraitsFunc::ErrorMessage('هذ المستخدم غير موجود او غير مفعل');
+        }
+        
+        $emailData['firstName'] = $userObj->username;
+        $emailData['subject'] = "تكافل - استعادة كلمة المرور";
+        $emailData['to'] = $email;
+        $emailData['template'] = "emailUsers.resetPassword";
+        $emailData['content'] = \URL::to('/backend/changePassword').'/'.encrypt($userObj->id);
+        MailHelper::SendMail($emailData);
+       
+        return \TraitsFunc::SuccessResponse('يرجي التأكد من رسائل البريد الالكتروني لتغيير كلمة المرور');
+    }
+
+    public function changePassword($encrypted_user_id) {
+        return view('Auth.Views.changePassword');
+    }
+
+    public function completeReset($encrypted_user_id) {
+        $input = \Request::all();
+        $rules = [
+            'password' => 'required|confirmed',
+            'password_confirmation' => 'required'
+        ];
+
+        $message = [
+            'password.required' => "يرجي ادخال كلمة المرور الجديدة",
+            'password.confirmed' => "كلمة المرور غير متطابقة",
+            'password_confirmation.required' => "يرجي اعادة كتابة كلمة المرور",
+        ];
+
+        $validate = \Validator::make($input, $rules, $message);
+        if($validate->fails()){
+            \Session::flash('error', $validate->messages()->first());
+            return back()->withInput();
+        }
+
+        $password = $input['password'];
+        $user_id = Crypt::decrypt($encrypted_user_id);
+        if(isset($encrypted_user_id) && $encrypted_user_id != null){
+            $userObj = User::NotDeleted()->find($user_id);
+        }
+
+        $userObj->password = \Hash::make($password);
+        $userObj->save();
+
+        \Session::flash('success', "تم تغيير كلمة المرور بنجاح");
+        return redirect('/backend/login');
+    }
 
 }

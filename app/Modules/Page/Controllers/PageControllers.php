@@ -85,7 +85,7 @@ class PageControllers extends Controller {
             $imagesData->update(['imageable_id'=>$menuObj->id]);
             foreach ($imagesData->get() as $image) {
                 if($image->link == $image->filename){
-                    $image->link = \URL::to('/uploads').'/pages/'.$menuObj->id.'/'.$image->filename;
+                    $image->link = asset('/uploads').'/pages/'.$menuObj->id.'/'.$image->filename;
                     $image->save();
 
                     $menuObj->image = $image->filename;
@@ -125,7 +125,7 @@ class PageControllers extends Controller {
             $imagesData->update(['imageable_id'=>$menuObj->id]);
             foreach ($imagesData->get() as $image) {
                 if($image->link == $image->filename){
-                    $image->link = \URL::to('/uploads').'/pages/'.$menuObj->id.'/'.$image->filename;
+                    $image->link = asset('/uploads').'/pages/'.$menuObj->id.'/'.$image->filename;
                     $image->save();
 
                     $menuObj->image = $image->filename;

@@ -96,7 +96,7 @@ class UsersControllers extends Controller {
             $imagesData->update(['imageable_id'=>$groupObj->id]);
             foreach ($imagesData->get() as $image) {
                 if($image->link == $image->filename){
-                    $image->link = \URL::to('/uploads').'/users/'.$groupObj->id.'/'.$image->filename;
+                    $image->link = asset('/uploads').'/users/'.$groupObj->id.'/'.$image->filename;
                     $image->save();
 
                     $groupObj->image = $image->filename;

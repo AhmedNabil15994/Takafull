@@ -138,7 +138,8 @@ class User extends Model{
 
     static function checkUserByEmail($email, $notId = false){
         $dataObj = self::NotDeleted()
-            ->where('email', $email);
+            ->where('email', $email)->where('is_active', 1)
+            ->where('status', 1);
 
         if ($notId != false) {
             $dataObj->whereNotIn('id', [$notId]);

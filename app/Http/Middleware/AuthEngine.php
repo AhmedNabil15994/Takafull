@@ -18,8 +18,8 @@ class AuthEngine
             return Redirect('/backend/login');
         }
 
-        if (in_array($request->segment(1), ['login','register','reset'])) {
-            if (in_array($request->segment(1), ['login','register','reset'])) {
+        if (in_array($request->segment(1), ['backend'])) {
+            if (in_array($request->segment(2), ['login','register','resetPassword','changePassword','completeReset'])) {
                 return $next($request);
             } else {
 

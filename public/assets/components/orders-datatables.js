@@ -8,11 +8,11 @@ var KTDatatablesAdvancedMultipleControls = function() {
 			// DOM Layout settings
 			dom:'Bfrtip',
 			dom:
-				"<'row'<'col-sm-12 col-md-9'l><'col-sm-12 col-md-3 text-right'Bf>>" +
-				"<'row'<'col-sm-12 col-md-6'i><'col-sm-12 col-md-6'p>> " +
-				"<'row'<'col-sm-12'tr>>" +
-				"<'row'<'col-sm-12 col-md-9'l><'col-sm-12 col-md-3 text-right'f>>" +
-				"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>", // read more: https://datatables.net/examples/basic_init/dom.html
+				"<'row'<'col-xs-12 col-sm-6 col-md-6'l><'col-xs-12 col-sm-6 col-md-6 text-right'Bf>>" +
+				"<'row'<'col-xs-6 col-sm-6 col-md-6'i><'col-xs-6 col-sm-6 col-md-6'p>> " +
+				"<'row'<'col-sm-12 'tr>>" +
+				"<'row'<'col-xs-4 col-sm-6 col-md-6 'l><'col-xs-8 col-sm-6 col-md-6  text-right'f>>" +
+				"<'row'<'col-xs-6 col-sm-6 col-md-6 'i><'col-xs-6 col-sm-6 col-md-6 'p>>", // read more: https://datatables.net/examples/basic_init/dom.html
 	        buttons: [
 	            {
 	                extend: 'colvis',
@@ -57,11 +57,22 @@ var KTDatatablesAdvancedMultipleControls = function() {
 				sSearch: "  البحث: ",
 				sInfo: 'يتم العرض من  _START_ الي _END_ (العدد الكلي للسجلات _TOTAL_ )',
 				sLengthMenu: 'عرض _MENU_ سجلات',
+				sEmptyTable: "لا يوجد نتائج مسجلة",
+				sProcessing: "جاري التحميل",
+				sInfoEmpty: "لا يوجد نتائج مسجلة",
+				select:{
+					rows: {
+                    	_: "لقد قمت باختيار %d عناصر",
+	                    0: "",
+	                    1: "لقد قمت باختيار عنصر واحد"
+	                }
+				}
 			},
 			responsive: true,
 			searchDelay: 500,
 			processing: true,
 			serverSide: true,
+			stateSave: true,
 			select: {
 				style: 'multi',
 				selector: 'td:nth-child(2) .checkable',
@@ -207,6 +218,22 @@ var KTDatatablesAdvancedMultipleControls = function() {
 		        }), DataTable.table().draw();
 		    });
 		}
+
+		$('.selectAll').on('click',function(e){
+		    e.preventDefault();
+		    e.stopPropagation();
+		    DataTable.rows().select();
+    		$('table input[type="checkbox"]').attr('checked','checked');
+		    $('table input[type="checkbox"]').parents('tr').addClass('selected');
+		});
+
+		$('.deselectAll').on('click',function(e){
+		    e.preventDefault();
+		    e.stopPropagation();
+		    DataTable.rows().deselect();
+    		$('table input[type="checkbox"]').attr('checked', false);
+		    $('input[type="checkbox"]').parents('tr').removeClass('selected');
+		});
 	};
 
 	return {
