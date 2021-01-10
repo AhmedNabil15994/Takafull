@@ -31,7 +31,7 @@
                         <a href="{{ URL::to('/backend/dashboard') }}" class="text-muted"><i class="m-nav__link-icon la la-home"></i></a>
                     </li>
                     <li class="breadcrumb-item">
-                        <a href="{{ URL::to('/backend/contactUs') }}" class="text-muted">إعدادات لوحه التحكم</a>
+                        <a href="{{ URL::to('/backend/panelSettings') }}" class="text-muted">إعدادات لوحه التحكم</a>
                     </li>
                     <li class="breadcrumb-item">
                         <a href="{{ URL::current() }}" class="text-muted">تعديل</a>

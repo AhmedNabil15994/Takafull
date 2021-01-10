@@ -193,8 +193,12 @@ class SliderControllers extends Controller {
 
     public function addImage($images,$nextID=false) {
         $lastID = Slider::orderBy('id','DESC')->first();
-        if($lastID && ! $nextID){
-            $nextID = $lastID->id + 1;
+        if($lastID){
+            if(! $nextID){
+                $nextID = $lastID->id + 1;
+            }
+        }else{
+            $nextID = 1;
         }        
         $fileName = \ImagesHelper::UploadImage('sliders', $images, $nextID);
         if($fileName == false){

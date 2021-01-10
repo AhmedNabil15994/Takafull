@@ -299,9 +299,13 @@ class UsersControllers extends Controller {
 
     public function addImage($images,$nextID=false) {
         $lastID = User::orderBy('id','DESC')->first();
-        if($lastID && ! $nextID){
-            $nextID = $lastID->id + 1;
-        }        
+        if($lastID){
+            if(! $nextID){
+                $nextID = $lastID->id + 1;
+            }
+        }else{
+            $nextID = 1;
+        }       
         $fileName = \ImagesHelper::UploadImage('users', $images, $nextID);
         if($fileName == false){
             return false;
