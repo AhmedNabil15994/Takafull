@@ -536,7 +536,9 @@ label.checkbox{
 #kt_aside_menu.aside-menu .menu-nav>.menu-item.active>.menu-link .menu-icon,
 #kt_aside_menu.aside-menu .menu-nav>.menu-item.active>.menu-link .menu-text,
 #kt_aside_menu.aside-menu .menu-nav>.menu-item:hover>.menu-link .menu-icon,
-#kt_aside_menu.aside-menu .menu-nav>.menu-item:hover>.menu-link .menu-text{
+#kt_aside_menu.aside-menu .menu-nav>.menu-item:hover>.menu-link .menu-text,
+#kt_aside_menu.aside-menu .menu-nav>.menu-item.menu-item-open>.menu-link .menu-icon,
+#kt_aside_menu.aside-menu .menu-nav>.menu-item.menu-item-open>.menu-link .menu-text{
 	color: #2ca189;
 }
 .dropzone.dz-clickable *{
