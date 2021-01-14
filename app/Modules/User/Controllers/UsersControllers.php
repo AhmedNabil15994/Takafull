@@ -76,6 +76,18 @@ class UsersControllers extends Controller {
             return redirect()->back();
         }
 
+        $userObj = User::checkUserByEmail($input['email'],$id);
+        if($userObj){
+            \Session::flash('error', 'هذا البريد الالكتروني مستخدم من قبل');
+            return redirect()->back()->withInput();
+        }
+
+        $userObj = User::checkUserByUserName($input['username'],$id);
+        if($userObj){
+            \Session::flash('error', 'هذا اسم المستخدم مستخدم من قبل');
+            return redirect()->back()->withInput();
+        }
+
         $groupObj->username = $input['username'];
         $groupObj->group_id = $input['group_id'];
         $groupObj->email = $input['email'];
@@ -184,6 +196,21 @@ class UsersControllers extends Controller {
         $input = \Request::all();
         foreach ($input['data'] as $item) {
             $col = $item[1];
+
+            if($col == 'email'){
+                $userObj = User::checkUserByEmail($item[2],$item[0]);
+                if($userObj){
+                    return \TraitsFunc::ErrorMessage("هذا البريد الالكتروني (".$item[2].") مستخدم من قبل");;
+                }
+            }
+
+            if($col == 'username'){
+                $userObj = User::checkUserByUserName($item[2],$item[0]);
+                if($userObj){
+                    return \TraitsFunc::ErrorMessage("هذا اسم المستخدم (".$item[2].") مستخدم من قبل");;
+                }
+            }
+
             $menuObj = User::find($item[0]);
             $menuObj->$col = $item[2];
             $menuObj->updated_at = DATE_TIME;
