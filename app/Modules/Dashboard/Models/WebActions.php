@@ -79,7 +79,7 @@ class WebActions extends Model{
     static function getPageTitle($name){
         $text = '';
         if($name == 'TopMenu'){
-            $text = 'القوائم العليوة';
+            $text = 'القوائم العلوية';
         }elseif($name == 'BottomMenu'){
             $text = 'القوائم السفلية';
         }elseif($name == 'Advantage'){
