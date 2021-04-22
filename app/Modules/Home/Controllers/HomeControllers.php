@@ -109,7 +109,6 @@ class HomeControllers extends Controller {
         $menuObj->message = $input['message'];
         $menuObj->ip_address = $ip_address;
         $menuObj->reply = null;
-        $menuObj->sort = ContactUs::newSortIndex();
         $menuObj->status = 1;
         $menuObj->created_at = DATE_TIME;
         $menuObj->save();
